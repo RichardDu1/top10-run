@@ -1,0 +1,59 @@
+---
+title: "Automate Social Media Content Curation and Scheduling with NLP"
+description: "Leverage NLP-powered tools to automatically curate relevant content, generate engaging posts, and schedule them across your social channels, saving hours of manual work each week."
+targetRole: ["social-media-manager"]
+targetIntent: ["automate-social-posting"]
+difficulty: "Intermediate"
+setupTime: "45 Minutes"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 10 hours/week"
+toolsUsed: ["feedly","zapier","buffer"]
+---
+
+## Automating Social Media Content Curation and Scheduling with NLP
+
+This workflow uses NLP-powered tools to automate the entire process of finding, curating, and scheduling social media content. By the end, you'll have a system that runs on autopilot.
+
+### Prerequisites
+- A Feedly account (free or Pro)
+- A Zapier account (free tier available)
+- A Buffer account (free tier available)
+
+### Step 1: Set Up Content Sources in Feedly
+1. Create a Feedly account and add RSS feeds or topics relevant to your industry.
+2. Use Feedly's AI (Leo) to filter articles by relevance, popularity, or keywords.
+3. Create a board named "To Share" to collect curated articles.
+
+### Step 2: Connect Feedly to Zapier
+1. In Zapier, create a new Zap with Feedly as the trigger.
+2. Choose trigger: "New Article in Board" and select your "To Share" board.
+3. Test the trigger to ensure Feedly sends new articles to Zapier.
+
+### Step 3: Generate NLP-Powered Post Text
+1. Add an action step: Use OpenAI (GPT-4) or another NLP service to generate a social media post.
+2. Configure the prompt: "Summarize this article in 1-2 sentences for Twitter: {{article summary}}. Include relevant hashtags."
+3. Map the article content from Feedly to the prompt.
+4. Test the action to see the generated post.
+
+### Step 4: Create Buffer Post
+1. Add another action step: Buffer > Create Post.
+2. Connect your Buffer account and select the social profiles (Twitter, LinkedIn, etc.).
+3. Set the post text to the output from the NLP step.
+4. Optionally, set a scheduled time using Buffer's queue or a custom time.
+
+### Step 5: Automate Scheduling
+1. In Buffer, set up a posting schedule (e.g., 3 times per day).
+2. The Zap will automatically add new posts to Buffer's queue.
+3. Buffer will publish them at the scheduled times.
+
+### Step 6: Monitor and Refine
+1. Review analytics in Buffer to see engagement.
+2. Adjust Feedly filters and NLP prompts to improve content quality.
+3. Add more sources or boards as needed.
+
+### Tips
+- Use Feedly's AI to filter out low-quality articles.
+- Customize the NLP prompt for each platform (e.g., shorter for Twitter, longer for LinkedIn).
+- Set up a manual review step if you want to approve posts before they go live.
+
+This workflow eliminates manual curation and writing, freeing you to focus on strategy and engagement.

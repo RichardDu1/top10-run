@@ -118,5 +118,305 @@
     "role": "intercompany-accountant",
     "intent": "automate-intercompany-reconciliation",
     "status": "completed"
+  },
+  {
+    "topic": "Automating Lead Scoring with Behavioral Data and Predictive AI",
+    "role": "marketing-manager",
+    "intent": "automate-lead-scoring",
+    "status": "completed"
+  },
+  {
+    "topic": "Personalized Email Sequences Based on Website Browsing History Using AI",
+    "role": "email-marketing-specialist",
+    "intent": "personalize-email-campaigns",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Driven A/B Testing for Subject Lines and Content Optimization",
+    "role": "marketing-manager",
+    "intent": "optimize-a-b-testing",
+    "status": "completed"
+  },
+  {
+    "topic": "Automating Social Media Content Curation and Scheduling with NLP",
+    "role": "social-media-manager",
+    "intent": "automate-social-posting",
+    "status": "completed"
+  },
+  {
+    "topic": "Predictive Churn Analysis and Automated Re-engagement Campaigns",
+    "role": "customer-success-manager",
+    "intent": "predict-churn",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Segmentation of Email Lists Based on Engagement Patterns",
+    "role": "email-marketing-specialist",
+    "intent": "segment-lists",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Lead Nurturing with Dynamic Content Generation",
+    "role": "marketing-manager",
+    "intent": "nurture-leads",
+    "status": "completed"
+  },
+  {
+    "topic": "Sentiment Analysis of Customer Feedback for Campaign Adjustment",
+    "role": "marketing-analyst",
+    "intent": "analyze-sentiment",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Optimized Ad Spend Allocation Across Multiple Channels",
+    "role": "paid-media-manager",
+    "intent": "optimize-ad-spend",
+    "status": "completed"
+  },
+  {
+    "topic": "Automating Personalized Landing Page Creation Using Visitor Data",
+    "role": "web-marketing-manager",
+    "intent": "personalize-landing-pages",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Based Content Recommendation Engine for Blog and Email",
+    "role": "content-marketing-manager",
+    "intent": "recommend-content",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Customer Journey Mapping from Multi-Touch Attribution Data",
+    "role": "marketing-analyst",
+    "intent": "map-journeys",
+    "status": "completed"
+  },
+  {
+    "topic": "Real-Time Lead Qualification Chatbots with Intent Detection",
+    "role": "sales-development-rep",
+    "intent": "qualify-leads",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Dynamic Pricing Optimization for E-commerce Campaigns",
+    "role": "ecommerce-marketing-manager",
+    "intent": "optimize-pricing",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Competitor Ad Monitoring and Strategy Adjustment",
+    "role": "competitive-intelligence-manager",
+    "intent": "monitor-competitors",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Generated Personalized Video Messages for Key Accounts",
+    "role": "account-based-marketing-manager",
+    "intent": "create-personalized-videos",
+    "status": "pending"
+  },
+  {
+    "topic": "Predictive Analytics for Campaign ROI Forecasting",
+    "role": "marketing-analyst",
+    "intent": "forecast-roi",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Survey Analysis and Actionable Insight Extraction",
+    "role": "market-research-manager",
+    "intent": "analyze-surveys",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Enabled Cross-Sell and Upsell Recommendations from Purchase History",
+    "role": "ecommerce-marketing-manager",
+    "intent": "recommend-upsells",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated SEO Content Gap Analysis and Topic Cluster Generation",
+    "role": "seo-manager",
+    "intent": "optimize-seo-content",
+    "status": "pending"
+  },
+  {
+    "topic": "Automating Purchase Order Creation from Supplier Emails using AI Extraction and ERP Integration",
+    "role": "procurement-manager",
+    "intent": "automate-po-creation",
+    "status": "pending"
+  },
+  {
+    "topic": "Predictive Inventory Replenishment Using AI Demand Forecasting and ERP Sales Data",
+    "role": "inventory-manager",
+    "intent": "optimize-stock-levels",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Invoice Matching and Three-Way Reconciliation using AI Document Processing",
+    "role": "accounts-payable-clerk",
+    "intent": "reduce-reconciliation-effort",
+    "status": "pending"
+  },
+  {
+    "topic": "Intelligent Lead Scoring and Routing to Sales Reps based on ERP Customer History",
+    "role": "sales-manager",
+    "intent": "improve-lead-conversion",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Expense Report Categorization and Policy Compliance Check using NLP",
+    "role": "finance-manager",
+    "intent": "streamline-expense-management",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Anomaly Detection in Financial Transactions to Prevent Fraud",
+    "role": "financial-controller",
+    "intent": "detect-fraud-early",
+    "status": "pending"
+  },
+  {
+    "topic": "Dynamic Pricing Optimization Based on Competitor Data and ERP Cost Analysis",
+    "role": "pricing-analyst",
+    "intent": "maximize-profit-margins",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Customer Payment Reminders and Dunning via AI-Personalized Messages",
+    "role": "accounts-receivable-manager",
+    "intent": "reduce-dso",
+    "status": "pending"
+  },
+  {
+    "topic": "Intelligent Scheduling of Production Orders using AI and ERP Capacity Data",
+    "role": "production-planner",
+    "intent": "optimize-manufacturing-schedule",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Driven Quality Control Alerts from IoT Sensor Data Integrated with ERP",
+    "role": "quality-manager",
+    "intent": "reduce-defects",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Vendor Performance Scoring using AI Analysis of ERP Purchase History",
+    "role": "supply-chain-manager",
+    "intent": "improve-vendor-selection",
+    "status": "pending"
+  },
+  {
+    "topic": "Natural Language Query Interface for ERP Data Reporting and Dashboard Creation",
+    "role": "business-analyst",
+    "intent": "self-service-analytics",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Employee Onboarding Workflow Auto-Populating ERP and HR Systems",
+    "role": "hr-manager",
+    "intent": "accelerate-onboarding",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Freight Audit and Cost Allocation Using AI and ERP Shipping Data",
+    "role": "logistics-manager",
+    "intent": "reduce-freight-costs",
+    "status": "pending"
+  },
+  {
+    "topic": "Predictive Maintenance Scheduling for Equipment Using AI and ERP Asset Data",
+    "role": "maintenance-manager",
+    "intent": "minimize-downtime",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Enhanced Sales Order Entry from Email Attachments and PDFs",
+    "role": "order-entry-clerk",
+    "intent": "eliminate-manual-entry",
+    "status": "pending"
+  },
+  {
+    "topic": "Customer Churn Prediction Using AI on ERP Transaction and Support Data",
+    "role": "customer-success-manager",
+    "intent": "reduce-churn",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated Intercompany Reconciliation using AI Matching and ERP Data",
+    "role": "corporate-accountant",
+    "intent": "simplify-intercompany-accounting",
+    "status": "pending"
+  },
+  {
+    "topic": "Intelligent Routing of Customer Support Tickets to ERP Contextual Information",
+    "role": "support-manager",
+    "intent": "improve-resolution-time",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-Powered Contract Analysis and Compliance Check Against ERP Procurement Policies",
+    "role": "legal-counsel",
+    "intent": "reduce-contract-risk",
+    "status": "pending"
+  },
+  {
+    "topic": "Automating lead enrichment from LinkedIn Sales Navigator using AI agents for B2B marketers",
+    "role": "b2b-marketing-manager",
+    "intent": "enrich-leads",
+    "status": "pending"
+  },
+  {
+    "topic": "Generating personalized email sequences from CRM data using GPT-4 and RPA",
+    "role": "email-marketing-specialist",
+    "intent": "personalize-outreach",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-driven sentiment analysis of social media mentions to trigger automated responses",
+    "role": "social-media-manager",
+    "intent": "monitor-sentiment",
+    "status": "pending"
+  },
+  {
+    "topic": "Automating A/B test creation and analysis for landing pages using NLP",
+    "role": "growth-marketer",
+    "intent": "optimize-conversion",
+    "status": "pending"
+  },
+  {
+    "topic": "Predictive lead scoring using machine learning on historical sales data",
+    "role": "demand-gen-manager",
+    "intent": "score-leads",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated content repurposing from webinar transcripts into blog posts, social snippets, and email teasers",
+    "role": "content-marketer",
+    "intent": "repurpose-content",
+    "status": "pending"
+  },
+  {
+    "topic": "AI-powered churn prediction and automated retention campaign triggers",
+    "role": "customer-success-manager",
+    "intent": "reduce-churn",
+    "status": "pending"
+  },
+  {
+    "topic": "Intelligent ad copy generation based on competitor analysis and brand voice",
+    "role": "ppc-specialist",
+    "intent": "generate-ads",
+    "status": "pending"
+  },
+  {
+    "topic": "Automated event-triggered workflows for account-based marketing using intent data",
+    "role": "abm-marketer",
+    "intent": "trigger-abm",
+    "status": "pending"
+  },
+  {
+    "topic": "AI summarization of sales call transcripts to update CRM fields and suggest next steps",
+    "role": "sales-enablement-manager",
+    "intent": "summarize-calls",
+    "status": "pending"
   }
 ]

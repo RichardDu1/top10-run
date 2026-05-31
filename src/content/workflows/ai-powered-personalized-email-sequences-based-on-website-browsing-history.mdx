@@ -1,0 +1,62 @@
+---
+title: "AI-Powered Personalized Email Sequences Based on Website Browsing History"
+description: "Leverage AI to automatically send personalized email sequences triggered by individual website browsing behavior, increasing engagement and conversions."
+targetRole: ["email-marketing-specialist"]
+targetIntent: ["personalize-email-campaigns"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$50 - $200/mo"
+roi: "Saves 15 hours/week and increases email revenue by 20%"
+toolsUsed: ["hubspot","clearbit","chatgpt","zapier"]
+---
+
+## Overview
+
+Personalized email sequences based on website browsing history allow you to send the right message at the right time. By tracking which pages a visitor views, you can tailor follow-up emails to their specific interests. This guide uses AI to automate content creation and personalization.
+
+## Prerequisites
+
+- A website with tracking (e.g., HubSpot tracking code)
+- An email marketing platform (HubSpot)
+- AI content generation tool (ChatGPT)
+- Data enrichment tool (Clearbit)
+- Automation tool (Zapier)
+
+## Step 1: Set Up Website Tracking
+
+Install HubSpot tracking code on your website to capture page visits. In HubSpot, go to **Settings > Tracking & Analytics > Tracking Code** and copy the code into your site's header.
+
+## Step 2: Enrich Visitor Data with Clearbit
+
+Connect Clearbit to HubSpot to append firmographic data (company size, industry) to anonymous visitors. This helps segment leads. Use Zapier to automate: when a new contact is created in HubSpot, enrich with Clearbit.
+
+## Step 3: Define Browsing-Based Segments
+
+In HubSpot, create lists based on pages visited. For example:
+- **Pricing page visitors**: High intent
+- **Blog readers**: Educational content
+- **Case study viewers**: Consideration stage
+
+## Step 4: Create AI-Generated Email Templates
+
+Use ChatGPT to draft personalized email sequences for each segment. Prompt example: "Write a 3-email sequence for a SaaS prospect who visited the pricing page. Tone: professional, personalized. Include placeholders for company name and industry."
+
+## Step 5: Build Automated Workflows in HubSpot
+
+Create workflows triggered by page visits:
+1. **Trigger**: Contact visits pricing page
+2. **Action**: Add to "Pricing Interest" list
+3. **Action**: Send email sequence (from Step 4)
+4. **Delay**: 1 day between emails
+
+## Step 6: Personalize with Dynamic Content
+
+Use HubSpot personalization tokens (e.g., `{{contact.firstname}}`, `{{contact.company}}`) and Clearbit data to insert company-specific details. For deeper personalization, use ChatGPT to generate unique subject lines based on browsing history via Zapier.
+
+## Step 7: Test and Optimize
+
+A/B test subject lines, send times, and email length. Monitor open rates and click-through rates. Adjust AI prompts based on performance.
+
+## Conclusion
+
+By combining website tracking, AI content generation, and automation, you can deliver hyper-personalized email sequences that resonate with each prospect. This workflow scales personalization without manual effort.

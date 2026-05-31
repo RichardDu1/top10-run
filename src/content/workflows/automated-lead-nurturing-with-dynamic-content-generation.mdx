@@ -1,0 +1,73 @@
+---
+title: "Automated Lead Nurturing with Dynamic Content Generation"
+description: "A step-by-step guide for marketing managers to set up an automated lead nurturing workflow that uses dynamic content generation to personalize email sequences based on lead behavior and data."
+targetRole: ["marketing-manager"]
+targetIntent: ["nurture-leads"]
+difficulty: "Intermediate"
+setupTime: "2 Hours"
+costEstimate: "$50 - $200/mo"
+roi: "Saves 15 hours/week and increases conversion rates by 30%"
+toolsUsed: ["hubspot","jasper","zapier"]
+---
+
+## Introduction
+
+Automated lead nurturing with dynamic content generation allows you to send personalized emails to leads based on their behavior, demographics, and stage in the buyer's journey. This guide will walk you through setting up a workflow using HubSpot (CRM and marketing automation), Jasper (AI content generation), and Zapier (integration).
+
+## Prerequisites
+
+- A HubSpot account (Professional or Enterprise for advanced automation)
+- A Jasper account (or similar AI writing tool)
+- A Zapier account
+- A list of leads with at least name and email
+
+## Step 1: Segment Your Leads in HubSpot
+
+1. Log in to HubSpot and navigate to **Contacts** > **Lists**.
+2. Create a new **Active List** for leads that have shown interest (e.g., downloaded a whitepaper).
+3. Add filters: **Email** is known, **Last activity date** is in the last 30 days.
+4. Save the list. This will be your target audience for nurturing.
+
+## Step 2: Create Dynamic Content Templates in Jasper
+
+1. In Jasper, create a new **Document** for an email template.
+2. Use a prompt like: "Write a personalized email to a lead named [First Name] who works at [Company Name] in the [Industry] industry. The email should offer a free demo of our product and highlight benefits relevant to [Industry]."
+3. Generate multiple variations for different industries (e.g., SaaS, Healthcare, Finance).
+4. Save each variation as a separate template.
+
+## Step 3: Set Up Dynamic Personalization in HubSpot
+
+1. In HubSpot, go to **Marketing** > **Email** and create a new **Regular Email**.
+2. Use **Personalization Tokens** for first name, company, etc.
+3. For dynamic content blocks, use **Smart Content** based on contact properties (e.g., industry).
+4. Insert the Jasper-generated content into the appropriate smart content blocks.
+
+## Step 4: Build the Automated Workflow
+
+1. In HubSpot, go to **Automation** > **Workflows** and create a new **Contact-based workflow**.
+2. Set the enrollment trigger: **Contact is in the list** created in Step 1.
+3. Add actions:
+   - **Send email**: Choose the email created in Step 3.
+   - **Wait for 3 days**.
+   - **If/Else branch**: Check if lead opened the email.
+     - If yes: Send a follow-up email with a case study.
+     - If no: Send a re-engagement email with a different subject line.
+4. Continue adding branches based on clicks, form submissions, etc.
+
+## Step 5: Integrate with Zapier for Advanced Triggers
+
+1. In Zapier, create a new **Zap**.
+2. Trigger: **HubSpot** > **New Contact** (or **New Deal**).
+3. Action: **Jasper** > **Create Content** using a template with dynamic fields from HubSpot.
+4. Second action: **HubSpot** > **Update Contact** with the generated content (e.g., custom property).
+5. Turn on the Zap.
+
+## Step 6: Monitor and Optimize
+
+1. In HubSpot, track email open rates, click rates, and conversion rates.
+2. Use A/B testing for subject lines and content.
+3. Adjust Jasper prompts based on performance.
+
+## Conclusion
+
+By following this workflow, you can nurture leads at scale with highly personalized content, saving time and increasing conversions. The combination of HubSpot, Jasper, and Zapier provides a powerful, automated solution.

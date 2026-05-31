@@ -1,0 +1,63 @@
+---
+title: "Real-Time Lead Qualification Chatbots with Intent Detection for SDRs"
+description: "Automate lead qualification using AI chatbots that detect buyer intent in real-time, saving SDRs hours of manual screening and ensuring only high-quality leads reach your pipeline."
+targetRole: ["sales-development-rep"]
+targetIntent: ["qualify-leads"]
+difficulty: "Intermediate"
+setupTime: "60 Minutes"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 15 hours/week"
+toolsUsed: ["drift","hubspot-crm","zapier"]
+---
+
+## Real-Time Lead Qualification Chatbots with Intent Detection
+
+### Overview
+This workflow helps SDRs automate the initial lead qualification process using a chatbot that detects buyer intent in real-time. By integrating Drift (or a similar chatbot) with HubSpot CRM and Zapier, you can instantly capture, qualify, and route leads without manual effort.
+
+### Prerequisites
+- A Drift account (free tier available)
+- A HubSpot CRM account (free tier available)
+- A Zapier account (free tier available)
+
+### Step 1: Set Up Your Drift Chatbot
+1. Log in to Drift and navigate to **Chatbots**.
+2. Create a new chatbot named "Lead Qualifier".
+3. Add a welcome message: "Hi! I'm here to help. Are you looking for [Product/Service]?"
+4. Configure intent detection by adding keywords like "pricing", "demo", "trial", "buy".
+5. Set up a qualification flow: ask questions like "What's your company size?", "What's your role?", "What's your timeline?"
+6. Use Drift's built-in lead scoring to assign points based on answers.
+
+### Step 2: Connect Drift to HubSpot via Zapier
+1. In Zapier, create a new Zap.
+2. Trigger: **Drift - New Conversation**.
+3. Action: **HubSpot - Create/Update Contact**.
+4. Map Drift fields (email, name, company) to HubSpot contact properties.
+5. Add a second action: **HubSpot - Create Deal** (optional, for qualified leads).
+6. Test the Zap to ensure data flows correctly.
+
+### Step 3: Configure Intent Detection Rules
+1. In Drift, go to **Rules** and create a new rule: "High Intent Lead".
+2. Condition: If conversation contains keywords like "pricing" or "demo" AND lead score > 50.
+3. Action: Send Slack notification to SDR team and tag lead as "Hot".
+4. Create a second rule: "Low Intent Lead" for generic inquiries.
+5. Set up email alerts for high-intent leads via Zapier (Drift → Email).
+
+### Step 4: Test and Optimize
+1. Simulate a conversation as a prospect with high intent.
+2. Verify that the chatbot captures the lead, scores it, and triggers the correct actions.
+3. Review conversation logs in Drift to refine keywords and questions.
+4. Adjust lead scoring thresholds based on conversion data.
+
+### Step 5: Monitor and Iterate
+1. Use HubSpot dashboards to track lead source (Drift) and conversion rates.
+2. A/B test different chatbot messages and qualification questions.
+3. Regularly update intent keywords based on real conversations.
+
+### Troubleshooting
+- **No leads flowing**: Check Zapier connection and ensure Drift conversations are active.
+- **Wrong intent detection**: Refine keyword list and use negative keywords to filter out noise.
+- **Low engagement**: Shorten chatbot messages and add quick reply buttons.
+
+### Conclusion
+This workflow reduces manual lead screening by 80%, allowing SDRs to focus on high-intent prospects. With real-time intent detection, you can respond instantly and increase conversion rates.

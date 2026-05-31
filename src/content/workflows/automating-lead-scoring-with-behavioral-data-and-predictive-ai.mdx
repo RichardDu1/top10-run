@@ -1,0 +1,63 @@
+---
+title: "Automating Lead Scoring with Behavioral Data and Predictive AI"
+description: "A step-by-step guide to set up an automated lead scoring system using behavioral data and predictive AI, helping marketing managers prioritize high-intent leads and increase conversion rates."
+targetRole: ["marketing-manager"]
+targetIntent: ["automate-lead-scoring"]
+difficulty: "Intermediate"
+setupTime: "2-3 hours"
+costEstimate: "$0 - $200/mo"
+roi: "Saves 15 hours/week and increases lead-to-opportunity conversion by 30%"
+toolsUsed: ["hubspot","clearbit","madkudu","zapier"]
+---
+
+## Automating Lead Scoring with Behavioral Data and Predictive AI
+
+This guide walks you through building an automated lead scoring system that combines behavioral data (website visits, email clicks, content downloads) with predictive AI to identify your hottest leads. By the end, you'll have a dynamic scoring model that updates in real time and integrates with your CRM.
+
+### Prerequisites
+- A CRM (HubSpot, Salesforce, etc.)
+- A data enrichment tool (Clearbit, ZoomInfo)
+- A predictive scoring platform (MadKudu, Lattice Engines)
+- An automation tool (Zapier, Workato)
+
+### Step 1: Define Your Ideal Customer Profile (ICP)
+Start by analyzing your best customers. List common attributes: industry, company size, job title, and behaviors (e.g., visited pricing page, requested demo). This forms the basis for scoring.
+
+### Step 2: Collect Behavioral Data
+Use your CRM and analytics tools to track key actions:
+- **Website visits**: Pages viewed, time on site
+- **Email engagement**: Opens, clicks
+- **Content downloads**: Whitepapers, case studies
+- **Event attendance**: Webinars, demos
+Assign point values to each action. For example:
+- Visited pricing page: +10 points
+- Downloaded a case study: +5 points
+- Attended a webinar: +15 points
+
+### Step 3: Enrich Lead Data
+Use Clearbit to append firmographic and technographic data to your leads. This fills gaps like company revenue, tech stack, and role. Enriched data improves predictive model accuracy.
+
+### Step 4: Set Up Predictive AI Scoring
+Connect your CRM to a predictive scoring tool like MadKudu. The AI analyzes historical data (won/lost deals) and behavioral signals to assign a score (0-100) indicating purchase likelihood. Configure the model to update scores daily.
+
+### Step 5: Automate Score Updates with Zapier
+Create a Zap that triggers when a lead performs a key action (e.g., visits pricing page). The Zap:
+1. Captures the event from your analytics tool
+2. Sends the data to your scoring platform
+3. Updates the lead score in your CRM
+
+Example Zap:
+- Trigger: New page visit in Google Analytics
+- Action: Update lead score in HubSpot via MadKudu webhook
+
+### Step 6: Create Score-Based Workflows
+In your CRM, set up automated actions based on score thresholds:
+- **Score > 80**: Send lead to sales for immediate follow-up
+- **Score 50-80**: Add to a nurturing sequence with targeted content
+- **Score < 50**: Continue automated drip campaigns
+
+### Step 7: Monitor and Refine
+Review scoring accuracy monthly. Compare predicted scores with actual conversions. Adjust point values or retrain the AI model as needed.
+
+### Conclusion
+By combining behavioral data with predictive AI, you can automate lead scoring to focus on high-intent prospects. This system reduces manual work and improves sales efficiency.

@@ -1,0 +1,73 @@
+---
+title: "AI-Powered Email List Segmentation Based on Engagement Patterns"
+description: "Learn how to use AI tools to automatically segment your email list by engagement patterns (opens, clicks, inactivity) to boost deliverability and conversions."
+targetRole: ["email-marketing-specialist"]
+targetIntent: ["segment-lists"]
+difficulty: "Intermediate"
+setupTime: "45 Minutes"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 10 hours/week and improves campaign performance by 20%"
+toolsUsed: ["mailchimp","zapier","openai"]
+---
+
+## Overview
+
+AI-powered segmentation uses machine learning to analyze historical engagement data (opens, clicks, purchases, inactivity) and automatically group subscribers into meaningful segments. This guide walks you through setting up an automated workflow using Mailchimp, Zapier, and OpenAI.
+
+## Prerequisites
+
+- A Mailchimp account (any paid plan with audience management)
+- A Zapier account (free tier works)
+- An OpenAI API key (or ChatGPT Plus for manual analysis)
+
+## Step 1: Export Engagement Data from Mailchimp
+
+1. In Mailchimp, go to **Audience** > **Manage Audience** > **Export Audience**.
+2. Select **Export as CSV** and include fields: Email Address, Last Open Date, Last Click Date, Total Opens, Total Clicks, and any custom engagement scores.
+3. Save the CSV file.
+
+## Step 2: Prepare Data for AI Analysis
+
+Clean the CSV to ensure it has consistent formatting. Remove any duplicate emails and ensure dates are in a standard format (e.g., YYYY-MM-DD).
+
+## Step 3: Use OpenAI to Generate Segments
+
+### Option A: Manual via ChatGPT
+
+1. Upload your CSV to ChatGPT (ChatGPT Plus required).
+2. Prompt: "Analyze this email engagement data and suggest 5 segments based on recency, frequency, and monetary value. For each segment, provide a name, description, and the criteria (e.g., opened in last 30 days, clicked >5 times)."
+3. Copy the segment definitions.
+
+### Option B: Automated via API
+
+Use Zapier to send the CSV to OpenAI and receive segment labels.
+
+1. Create a new Zap: **Trigger: Schedule by Zapier** (e.g., weekly).
+2. **Action: Code by Zapier** (Python) to read the CSV and format it as a prompt.
+3. **Action: OpenAI (ChatGPT)** – use the `gpt-4` model with a system prompt: "You are an email segmentation expert. Given the following subscriber data, assign each subscriber to one of these segments: Active, At-Risk, Inactive, VIP, New. Output a JSON array with email and segment."
+4. **Action: Mailchimp** – Update subscriber tags or groups based on the segment.
+
+## Step 4: Apply Segments in Mailchimp
+
+1. In Mailchimp, go to **Audience** > **Manage Audience** > **Tags**.
+2. Create tags for each segment (e.g., VIP, At-Risk).
+3. Use the Zapier action to add the appropriate tag to each subscriber.
+
+## Step 5: Automate and Monitor
+
+Set the Zap to run weekly. Monitor engagement metrics (open rate, click rate, unsubscribe rate) to refine segments over time.
+
+## Best Practices
+
+- **Refresh segments regularly**: Engagement patterns change; update at least monthly.
+- **Test different segment sizes**: Avoid segments smaller than 100 subscribers for statistical significance.
+- **Combine with behavioral triggers**: Use segments to trigger automated campaigns (e.g., re-engagement for inactive).
+
+## Troubleshooting
+
+- **API rate limits**: If using OpenAI API, ensure your plan allows enough requests for your list size.
+- **Data privacy**: Anonymize data if necessary; avoid sending PII to third-party AI tools.
+
+## Conclusion
+
+AI-powered segmentation turns raw engagement data into actionable segments, enabling personalized campaigns that improve deliverability and ROI. Start with a small list and iterate.

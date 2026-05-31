@@ -1,0 +1,71 @@
+---
+title: "Predictive Churn Analysis & Automated Re-engagement Campaigns"
+description: "Leverage machine learning to predict at-risk customers and trigger personalized re-engagement workflows, reducing churn and increasing retention."
+targetRole: ["customer-success-manager"]
+targetIntent: ["predict-churn"]
+difficulty: "Intermediate"
+setupTime: "2-3 hours initial setup, then ongoing"
+costEstimate: "$0 - $200/mo (depending on tool tiers)"
+roi: "Saves 15+ hours/week and reduces churn by up to 30%"
+toolsUsed: ["hubspot","retently","zapier"]
+---
+
+## Overview
+
+This workflow combines predictive churn analysis with automated re-engagement campaigns. You'll use HubSpot's predictive scoring (or a custom model via Zapier + Retently) to identify at-risk customers, then trigger personalized email sequences and in-app messages to win them back.
+
+## Prerequisites
+
+- HubSpot CRM (Professional or Enterprise for predictive scoring)
+- Retently account (for NPS surveys and churn prediction)
+- Zapier account (for automation)
+- Basic knowledge of HubSpot workflows and Zapier
+
+## Step 1: Set Up Predictive Churn Scoring in HubSpot
+
+1. In HubSpot, navigate to **Contacts** > **Lists** and create a new active list of customers with a contract or subscription.
+2. Go to **Automation** > **Predictive Scoring** and enable the churn prediction model. HubSpot will automatically score contacts based on engagement, support tickets, product usage (if integrated), and email activity.
+3. Create a custom property `Churn Risk Score` (0-100) and map the predictive score to it.
+4. Set up a workflow that triggers when `Churn Risk Score` > 70: add contact to a static list "High Churn Risk".
+
+## Step 2: Integrate Retently for NPS and Churn Signals
+
+1. In Retently, create a new NPS survey campaign targeting customers who have been active for at least 30 days.
+2. Enable Retently's churn prediction feature (uses response patterns and engagement).
+3. Use Zapier to connect Retently to HubSpot: when a customer submits a low NPS (0-6) or is flagged as "at risk" by Retently, create/update a HubSpot contact property `Retently Churn Flag` = true.
+
+## Step 3: Build Automated Re-engagement Campaigns in HubSpot
+
+1. Create a HubSpot email sequence called "Re-engagement Flow".
+2. Set the enrollment trigger: contact is in "High Churn Risk" list OR `Retently Churn Flag` is true.
+3. Design the sequence:
+   - **Day 1**: Personalized email from CSM offering a free consultation or product walkthrough.
+   - **Day 3**: Case study relevant to their use case.
+   - **Day 7**: Special offer (e.g., discount on next renewal, extended trial).
+   - **Day 14**: Final check-in with a survey link to gather feedback.
+4. Add a conditional branch: if contact opens email or clicks link, remove from sequence and add to "Engaged" list.
+
+## Step 4: Trigger In-App Messages (Optional)
+
+If you use HubSpot's Conversations or a tool like Intercom, create an in-app message that appears when a high-risk customer logs in. Use Zapier to send a webhook to Intercom when a contact is added to "High Churn Risk".
+
+## Step 5: Monitor and Optimize
+
+1. Create a dashboard in HubSpot showing churn risk score distribution, re-engagement campaign performance (open rate, click rate, conversion rate).
+2. Review Retently NPS trends monthly.
+3. Adjust scoring thresholds and email copy based on results.
+
+## Automation Summary
+
+- **Trigger**: High churn risk score (HubSpot) or low NPS (Retently)
+- **Actions**: Add to re-engagement sequence, send email series, update CRM properties
+- **Tools**: HubSpot, Retently, Zapier
+
+## Troubleshooting
+
+- If predictive scoring isn't available, use a manual scoring system based on login frequency, support tickets, and email engagement.
+- Ensure Zapier connections are authenticated and test each step.
+
+## Conclusion
+
+This workflow automates the detection and re-engagement of at-risk customers, freeing your CS team to focus on high-touch interactions. With continuous optimization, you can significantly reduce churn.

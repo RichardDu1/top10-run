@@ -1,0 +1,83 @@
+---
+title: "Automated Customer Journey Mapping from Multi-Touch Attribution Data"
+description: "Learn how to automatically build customer journey maps by combining multi-touch attribution data from platforms like Dreamdata and HockeyStack with visualization tools like Miro or Figma, saving hours of manual analysis."
+targetRole: ["marketing-analyst"]
+targetIntent: ["map-journeys"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$0 - $200/mo (depending on tool tiers)"
+roi: "Saves 10+ hours/week on manual journey mapping"
+toolsUsed: ["dreamdata","hockeystack","miro","figma","zapier"]
+---
+
+## Overview
+
+This workflow automates the creation of customer journey maps by pulling multi-touch attribution data from B2B analytics platforms and visualizing it in a collaborative whiteboard tool. It's designed for marketing analysts who need to understand the full path from first touch to conversion.
+
+## Prerequisites
+
+- Active accounts on Dreamdata or HockeyStack (or similar multi-touch attribution tool)
+- A Miro or Figma account for visualization
+- A Zapier account for automation (free tier available)
+
+## Step-by-Step Guide
+
+### Step 1: Export Attribution Data
+
+1. Log into your attribution tool (e.g., Dreamdata).
+2. Navigate to the **Journey** or **Attribution** report.
+3. Set the date range to the last 30-90 days.
+4. Export the data as CSV or connect via API. For this guide, we'll use CSV export.
+
+**Tip:** Ensure your export includes touchpoint sequence, channel, campaign, and conversion status.
+
+### Step 2: Prepare Data in Google Sheets
+
+1. Upload the CSV to Google Sheets.
+2. Clean the data: remove duplicates, standardize channel names (e.g., "Paid Search" vs "Google Ads").
+3. Add a column for **Journey ID** (e.g., concatenate user ID and session ID).
+4. Sort by user and timestamp to ensure correct order.
+
+### Step 3: Create a Journey Summary Table
+
+1. In a new sheet, create a pivot table summarizing each journey:
+   - Row: Journey ID
+   - Columns: Touchpoint sequence (1st, 2nd, 3rd...)
+   - Values: Channel name
+2. This gives you a clean table where each row is a journey and each column is a touchpoint in order.
+
+### Step 4: Set Up Zapier Automation
+
+1. Create a new Zap in Zapier.
+2. Trigger: **New or Updated Spreadsheet Row** in Google Sheets (choose your summary sheet).
+3. Action: **Create a Card** in Miro (or **Create a Frame** in Figma).
+4. Map the fields:
+   - Card title: Journey ID
+   - Card content: List of touchpoints (e.g., "1. Google Ads → 2. Blog → 3. Demo Request")
+   - Assign a color based on conversion status (green = converted, red = not).
+5. Test the Zap with a sample row.
+
+### Step 5: Visualize in Miro/Figma
+
+1. Open your Miro board or Figma file.
+2. The Zap will automatically create cards for each journey.
+3. Manually arrange cards into a swimlane diagram by channel or stage (optional).
+4. Use Miro's **Timeline** or **Flowchart** template to connect touchpoints with arrows.
+
+**Pro Tip:** Use Miro's **Smart Shapes** to auto-layout cards for a cleaner map.
+
+### Step 6: Analyze and Share
+
+1. Review the map for common paths (e.g., most conversions start with Paid Search).
+2. Export the board as PDF or share a link with stakeholders.
+3. Update the Google Sheet weekly to refresh the map automatically.
+
+## Troubleshooting
+
+- **Missing touchpoints:** Ensure your export includes all channels; check attribution window settings.
+- **Zap not triggering:** Verify the trigger column is set to "New Row" and not "Updated Row".
+- **Too many journeys:** Filter by conversion status or limit to top 50 journeys in the sheet.
+
+## Conclusion
+
+This automated workflow transforms raw attribution data into visual journey maps in minutes, enabling data-driven decisions on channel optimization and campaign strategy. Adjust the tools and steps based on your stack.

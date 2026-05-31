@@ -1,0 +1,88 @@
+---
+title: "Sentiment Analysis of Customer Feedback for Campaign Adjustment"
+description: "Learn how to systematically collect, analyze, and act on customer feedback sentiment to optimize your marketing campaigns in real time."
+targetRole: ["marketing-analyst"]
+targetIntent: ["analyze-sentiment"]
+difficulty: "Intermediate"
+setupTime: "2 Hours"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 15 hours/week and improves campaign ROI by 20%"
+toolsUsed: ["monkeylearn","zapier","google-sheets","tableau"]
+---
+
+## Sentiment Analysis of Customer Feedback for Campaign Adjustment
+
+This workflow guides you through setting up an automated pipeline to collect customer feedback from multiple sources, analyze sentiment using AI, and adjust your marketing campaigns accordingly.
+
+### Prerequisites
+- A Google account (for Google Sheets)
+- A Zapier account (free tier available)
+- A MonkeyLearn account (free tier: 300 queries/month)
+- A Tableau Public account (free) or Tableau Desktop (trial)
+
+### Step 1: Collect Feedback Sources
+Identify where your customer feedback lives:
+- **Email**: Support tickets, newsletters
+- **Social Media**: Twitter mentions, Facebook comments
+- **Surveys**: NPS, CSAT
+- **Reviews**: G2, Capterra
+
+### Step 2: Set Up Data Ingestion with Zapier
+Create Zaps to send feedback to a central Google Sheet.
+
+1. **Zap 1: Email to Sheet**
+   - Trigger: New email matching a label (e.g., "Feedback")
+   - Action: Add row to Google Sheet with columns: Date, Source, Message
+
+2. **Zap 2: Twitter Mentions to Sheet**
+   - Trigger: New mention of your brand
+   - Action: Add row to same Google Sheet
+
+3. **Zap 3: Survey Responses to Sheet**
+   - Use Typeform or SurveyMonkey integration to add responses
+
+### Step 3: Analyze Sentiment with MonkeyLearn
+MonkeyLearn provides pre-trained sentiment analysis models.
+
+1. **Create a Classifier**
+   - Go to MonkeyLearn dashboard → Create Model → Sentiment Analysis
+   - Use the default "Sentiment" classifier (positive/negative/neutral)
+
+2. **Batch Analyze**
+   - Export your Google Sheet as CSV
+   - Upload to MonkeyLearn or use the API
+   - Run sentiment analysis on the "Message" column
+
+3. **Add Results to Sheet**
+   - Download results and add columns: Sentiment, Confidence Score
+
+### Step 4: Visualize Trends in Tableau
+Connect Tableau to your Google Sheet to create dashboards.
+
+1. **Connect Data**
+   - Open Tableau → Connect → Google Sheets → select your sheet
+
+2. **Create Dashboard**
+   - **Sentiment Over Time**: Line chart of average sentiment score by week
+   - **Feedback Volume by Source**: Bar chart
+   - **Top Negative Keywords**: Word cloud or bar chart
+
+3. **Publish to Tableau Public** for team access
+
+### Step 5: Adjust Campaigns Based on Insights
+Use the dashboard to identify negative sentiment spikes and adjust campaigns.
+
+- **Negative Spike**: Pause or modify ad copy, address product issues
+- **Positive Trend**: Amplify successful messaging
+- **Neutral Feedback**: Investigate for improvement opportunities
+
+### Automation Tips
+- Schedule MonkeyLearn analysis weekly via Zapier (delay action)
+- Set up email alerts in Tableau when sentiment drops below threshold
+
+### Troubleshooting
+- **API Limits**: Upgrade MonkeyLearn plan if hitting 300 queries/month
+- **Data Duplicates**: Use Zapier's deduplication feature
+
+### Conclusion
+This workflow enables you to continuously monitor customer sentiment and make data-driven campaign adjustments, improving customer satisfaction and marketing ROI.

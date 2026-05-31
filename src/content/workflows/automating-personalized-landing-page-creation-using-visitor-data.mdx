@@ -1,0 +1,65 @@
+---
+title: "Automating Personalized Landing Page Creation Using Visitor Data"
+description: "Learn how to dynamically create personalized landing pages based on visitor data using Clearbit, HubSpot, and Unbounce, saving hours of manual work and boosting conversion rates."
+targetRole: ["web-marketing-manager"]
+targetIntent: ["personalize-landing-pages"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$100 - $500/mo"
+roi: "Saves 15 hours/week and increases conversion by 30%"
+toolsUsed: ["clearbit","hubspot","unbounce","zapier"]
+---
+
+## Automating Personalized Landing Page Creation Using Visitor Data
+
+Personalized landing pages can dramatically increase conversion rates, but manually creating them for each visitor is impossible at scale. This workflow automates the process by leveraging visitor data (firmographics, behavior) to dynamically generate tailored landing pages.
+
+### Prerequisites
+- A website with tracking (e.g., Google Analytics, HubSpot tracking code)
+- A CRM or marketing automation platform (HubSpot)
+- A landing page builder (Unbounce)
+- Data enrichment tool (Clearbit)
+- Automation tool (Zapier)
+
+### Step 1: Capture Visitor Data
+
+First, you need to identify who is visiting your site. Use **Clearbit Reveal** (or similar) to identify companies visiting your site based on IP. Install the Clearbit script on your website.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/clearbit@1/dist/clearbit.min.js"></script>
+<script>
+  Clearbit('init', 'YOUR_API_KEY');
+  Clearbit('on', 'identified', function(data) {
+    // data contains company info
+  });
+</script>
+```
+
+### Step 2: Send Data to CRM
+
+Use **Zapier** to send identified visitor data to **HubSpot**. Create a Zap: Trigger = Clearbit (New Identified Visitor), Action = HubSpot (Create/Update Contact). Map fields like company name, industry, and size to HubSpot contact properties.
+
+### Step 3: Segment Visitors in HubSpot
+
+In HubSpot, create a list of contacts based on criteria (e.g., industry = SaaS, company size > 50). This list will trigger the landing page personalization.
+
+### Step 4: Create Dynamic Landing Pages in Unbounce
+
+In **Unbounce**, create a landing page template with dynamic text replacement (DTR). Use smart tags like `{{contact.company}}` and `{{contact.industry}}` to personalize headlines, CTAs, and images. For example:
+
+```
+Headline: "Welcome, {{contact.company}}!"
+Subheadline: "Tailored solutions for {{contact.industry}} companies."
+```
+
+### Step 5: Automate Page Assignment
+
+Use **Zapier** again: Trigger = HubSpot (Contact added to list), Action = Unbounce (Send dynamic URL to contact). Generate a unique URL per contact with query parameters (e.g., `?company=Acme&industry=SaaS`). Unbounce will read these parameters and populate the smart tags.
+
+### Step 6: Track and Optimize
+
+Set up UTM parameters and track conversions in HubSpot. Monitor which personalized elements drive the most engagement. A/B test different variations.
+
+### Conclusion
+
+This automated workflow ensures every visitor sees a landing page tailored to their company, increasing relevance and conversions. With tools like Clearbit, HubSpot, Unbounce, and Zapier, you can set it up in a few hours and start seeing results immediately.

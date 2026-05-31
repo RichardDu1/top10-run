@@ -1,0 +1,76 @@
+---
+title: "AI-Powered Content Recommendation Engine for Blog & Email"
+description: "Automate personalized content recommendations for your blog and email campaigns using AI, boosting engagement and saving hours of manual curation."
+targetRole: ["content-marketing-manager"]
+targetIntent: ["recommend-content"]
+difficulty: "Intermediate"
+setupTime: "45 Minutes"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 10 hours/week, increases click-through rates by 30%"
+toolsUsed: ["zapier","openai","mailchimp"]
+---
+
+## Overview
+
+This workflow uses AI to analyze your blog content and automatically generate personalized recommendations for your email subscribers. By integrating Zapier, OpenAI, and Mailchimp, you can deliver relevant content suggestions without manual effort.
+
+## Prerequisites
+
+- A blog with RSS feed or a list of URLs
+- Mailchimp account (or any email marketing tool with API)
+- Zapier account (free tier works)
+- OpenAI API key (sign up at platform.openai.com)
+
+## Step 1: Set Up Content Source
+
+First, ensure your blog has an RSS feed. If not, create a simple list of blog post URLs in a Google Sheet. This will be the source of content for recommendations.
+
+## Step 2: Create OpenAI Prompt for Recommendations
+
+Design a prompt that takes a list of blog posts and a subscriber's interests (tags) and returns a ranked list of recommended posts. Example prompt:
+
+```
+You are a content recommendation engine. Given a list of blog posts (title and URL) and a subscriber's interests (tags), recommend the top 3 most relevant posts. Output as JSON with title and URL.
+
+Blog posts:
+- "How to Improve SEO" (https://example.com/seo)
+- "Email Marketing Tips" (https://example.com/email)
+- "Social Media Strategy" (https://example.com/social)
+
+Subscriber interests: SEO, Content Marketing
+```
+
+## Step 3: Build Zapier Workflow
+
+Create a new Zap in Zapier with the following steps:
+
+### Trigger: Schedule (e.g., every week)
+- Choose "Schedule by Zapier" > "Every Week"
+- Set day and time (e.g., Monday 9 AM)
+
+### Action 1: Get Blog Posts
+- Use "RSS by Zapier" to fetch latest posts from your blog RSS feed
+- Or use "Google Sheets" to get rows from your sheet
+
+### Action 2: Get Subscribers from Mailchimp
+- Use "Mailchimp" > "Find Subscriber" or "Search Members"
+- You may need to loop through subscribers; use "Looping by Zapier" if needed
+
+### Action 3: Generate Recommendations with OpenAI
+- Use "OpenAI (ChatGPT)" > "Send Prompt"
+- Map the blog posts and subscriber interests (tags) into the prompt
+- Parse the JSON response
+
+### Action 4: Send Email with Recommendations
+- Use "Mailchimp" > "Send Transactional Email" or "Create Campaign"
+- Include the recommended post titles and links in the email body
+
+## Step 4: Test and Optimize
+
+Run a test with a few subscribers. Monitor open rates and click-through rates. Adjust the prompt or frequency as needed.
+
+## Tips
+
+- Use subscriber tags in Mailchimp to segment interests
+- For large lists, consider batching subscribers to avoid API limits
+- Add a fallback: if no recommendations, send a default "latest posts" email

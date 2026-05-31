@@ -6,8 +6,9 @@ const toolsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.date(),
-    updatedDate: z.date().optional(),
+    category: z.string().optional(),
+    pubDate: z.union([z.string(), z.date()]).transform((val) => new Date(val)),
+    updatedDate: z.union([z.string(), z.date()]).transform((val) => new Date(val)).optional(),
     heroImage: z.string().optional(),
     locale: z.string().default('en'),
   }),

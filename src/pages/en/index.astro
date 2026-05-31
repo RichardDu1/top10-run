@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = 'Fast Top 10 Lists | top10.run';
+const pageDescription = 'No fluff. No 5,000-word intros. Just the top 10 best options for whatever you are looking for.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://top10.run/en/"
+  schema={{ type: 'WebSite', data: { description: pageDescription } }}
+>
+  <!-- Brutalist Header -->
+  <header class="bg-primary text-black border-b-[8px] border-black pt-20 pb-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
+      <div>
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-4">
+          TOP 10.<br/>RUN.
+        </h1>
+        <p class="text-xl md:text-3xl font-bold uppercase tracking-tight max-w-xl">
+          Zero fluff. Fast answers. The definitive list for everything.
+        </p>
+      </div>
+      <div class="bg-black text-primary p-4 font-bold uppercase text-2xl rotate-3 shadow-[8px_8px_0_0_rgba(0,0,0,0.5)]">
+        NO BS ALLOWED
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 border-x-[8px] border-border min-h-screen">
+    
+    <div class="flex items-center justify-between border-b-4 border-border pb-4 mb-12">
+      <h2 class="text-3xl font-bold">LATEST RANKINGS</h2>
+      <button class="bg-primary text-black font-bold uppercase px-6 py-2 hover:bg-white transition-colors">View All</button>
+    </div>
+
+    <!-- Brutalist List Item 1 -->
+    <article class="flex flex-col md:flex-row gap-8 items-center border-b-2 border-border pb-12 mb-12 group cursor-pointer">
+      <div class="brutalist-number md:w-1/4 text-center group-hover:text-primary transition-colors">01</div>
+      <div class="md:w-3/4">
+        <div class="flex gap-2 mb-4">
+          <span class="bg-primary text-black text-xs font-bold uppercase px-3 py-1">Tech</span>
+          <span class="border border-border text-muted text-xs font-bold uppercase px-3 py-1">Oct 2026</span>
+        </div>
+        <h3 class="text-4xl md:text-5xl font-bold mb-4 group-hover:underline decoration-primary decoration-[4px] underline-offset-4 leading-tight">
+          10 Best LLM API Providers for Indie Hackers
+        </h3>
+        <p class="text-xl text-muted">Skip the big tech queues. Here are the fastest, cheapest, and most reliable inference APIs.</p>
+      </div>
+    </article>
+
+    <!-- Brutalist List Item 2 -->
+    <article class="flex flex-col md:flex-row gap-8 items-center border-b-2 border-border pb-12 mb-12 group cursor-pointer">
+      <div class="brutalist-number md:w-1/4 text-center group-hover:text-primary transition-colors">02</div>
+      <div class="md:w-3/4">
+        <div class="flex gap-2 mb-4">
+          <span class="bg-primary text-black text-xs font-bold uppercase px-3 py-1">Finance</span>
+          <span class="border border-border text-muted text-xs font-bold uppercase px-3 py-1">Sep 2026</span>
+        </div>
+        <h3 class="text-4xl md:text-5xl font-bold mb-4 group-hover:underline decoration-primary decoration-[4px] underline-offset-4 leading-tight">
+          10 Best High-Yield Savings Accounts
+        </h3>
+        <p class="text-xl text-muted">Maximize your cash. No hidden fees, no minimum balances.</p>
+      </div>
+    </article>
+
+  </main>
+
+</BaseLayout>

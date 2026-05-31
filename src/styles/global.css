@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* === TRUE BESPOKE REDESIGN: TOP 10 RUN ===
+   Aesthetic: Swiss Minimalist
+   Vibe: Speed, Grid-based, Purple Accent === */
+
+@theme {
+  --color-primary: #8B5CF6; /* Purple */
+  --color-primary-dark: #7C3AED;
+  --color-surface: #FFFFFF; /* Minimalist White Background */
+  --color-neutral: #F4F4F5;
+  --color-border: #E4E4E7;
+  --color-muted: #71717A;
+  --color-text: #18181B;    /* Very dark gray text */
+
+  /* Brutalist Typography */
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'Space Grotesk', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { 
+  font-family: var(--font-sans); 
+  color: var(--color-text); 
+  background-color: var(--color-surface); 
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4 { 
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.brutalist-number {
+  font-size: 8rem;
+  line-height: 0.8;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-primary);
+}

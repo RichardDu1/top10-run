@@ -1,0 +1,67 @@
+---
+title: "Automated Invoice Routing with AI Classification: A Step-by-Step Guide for AP Managers"
+description: "Eliminate manual invoice sorting by using AI to automatically classify and route incoming invoices to the correct approver based on amount, vendor, and cost code. This guide walks through setting up a touchless AP workflow using Nanonets and Zapier."
+targetRole: ["accounts-payable-manager"]
+targetIntent: ["automate-invoice-routing"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$500 - $1,000/mo (Nanonets + Zapier)"
+roi: "Saves 20+ hours/week, reduces approval cycle by 70%"
+toolsUsed: ["nanonets","zapier"]
+---
+
+## Overview
+
+Automated invoice routing uses AI to extract key data from invoices (vendor, amount, cost code) and then applies business rules to send the invoice to the right approver. This eliminates manual sorting, reduces errors, and speeds up approvals.
+
+## Prerequisites
+
+- A Nanonets account (free trial available)
+- A Zapier account (free tier works for testing)
+- Access to your email or accounting system (e.g., QuickBooks, Xero)
+- Defined approval rules (e.g., invoices under $500 go to manager, over $5000 to CFO)
+
+## Step 1: Set Up Invoice Capture in Nanonets
+
+1. Log in to Nanonets and create a new **Invoice OCR Model**.
+2. Upload sample invoices (PDF or image) to train the AI. Nanonets will automatically extract fields like vendor name, invoice number, total amount, and line items.
+3. Review and correct any misclassifications to improve accuracy. Aim for 98%+ accuracy before moving on.
+4. Enable **Intelligent Approval Routing** in the settings. Define rules:
+   - If amount < $500 → route to "Manager"
+   - If amount between $500 and $5000 → route to "Department Head"
+   - If amount > $5000 → route to "CFO"
+   - You can also add rules based on vendor or cost code.
+
+## Step 2: Connect Nanonets to Zapier
+
+1. In Zapier, create a new Zap with **Nanonets** as the trigger app.
+2. Choose trigger event: **New Invoice Processed**.
+3. Connect your Nanonets account and select the model you trained.
+4. Test the trigger to ensure Zapier receives invoice data.
+
+## Step 3: Build Routing Logic in Zapier
+
+1. Add a **Filter** step to check the invoice amount (or other criteria).
+2. Create separate paths for each approval tier using **Paths** (Zapier Premium) or multiple Zaps.
+   - Path A: Amount < $500 → send to manager email
+   - Path B: Amount $500-$5000 → send to department head
+   - Path C: Amount > $5000 → send to CFO
+3. For each path, use **Gmail** or **Outlook** action to send an email with the invoice attached and a link to approve/reject.
+4. Optionally, use **Slack** to notify approvers in a dedicated channel.
+
+## Step 4: Automate Approval Response
+
+1. Set up a second Zap to capture approval responses (e.g., email reply with "Approved" or button click).
+2. Use **Email Parser** (e.g., Zapier's Email) to detect keywords.
+3. If approved, update the invoice status in your accounting software (e.g., QuickBooks) via Zapier action.
+4. If rejected, notify the AP team and route back to the sender.
+
+## Step 5: Monitor and Optimize
+
+- Use Nanonets dashboard to review AI accuracy and retrain as needed.
+- Set up alerts for invoices stuck in routing.
+- Regularly update approval rules based on business changes.
+
+## Conclusion
+
+By combining Nanonets' AI classification with Zapier's workflow automation, you can achieve touchless invoice routing. This reduces manual effort, speeds up approvals, and ensures compliance with your approval policies.

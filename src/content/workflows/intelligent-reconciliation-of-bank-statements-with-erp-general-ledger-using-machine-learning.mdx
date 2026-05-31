@@ -1,0 +1,72 @@
+---
+title: "Intelligent Reconciliation of Bank Statements with ERP General Ledger Using Machine Learning"
+description: "Automate the tedious process of matching bank transactions to ERP general ledger entries using AI-powered reconciliation tools like Nanonets, reducing manual effort and errors."
+targetRole: ["accountant"]
+targetIntent: ["automate-bank-reconciliation"]
+difficulty: "Intermediate"
+setupTime: "2-4 hours initial setup, then ongoing automation"
+costEstimate: "$500 - $2000/mo (enterprise pricing)"
+roi: "Saves 20+ hours/week per accountant"
+toolsUsed: ["nanonets"]
+---
+
+## Overview
+
+Bank reconciliation is a critical but time-consuming task for accountants. Machine learning (ML) tools like Nanonets can automatically match bank statement transactions to ERP general ledger entries, flag discrepancies, and learn from corrections over time. This guide walks you through setting up an intelligent reconciliation workflow.
+
+## Prerequisites
+
+- Access to your ERP system (e.g., SAP, Oracle, Microsoft Dynamics) with read permissions for the general ledger.
+- Bank statement files in CSV, Excel, or PDF format (or direct bank feed via API).
+- A Nanonets account (sign up at nanonets.com).
+
+## Step 1: Connect Your Data Sources
+
+1. **Log in to Nanonets** and navigate to the **Reconciliation** module.
+2. **Add a new reconciliation model** and name it (e.g., "Bank vs GL Reconciliation").
+3. **Connect your ERP**: Use Nanonets' pre-built connectors for popular ERPs (SAP, Oracle, NetSuite, etc.) or upload a CSV export of your general ledger transactions. Ensure the data includes fields like transaction date, amount, description, and account code.
+4. **Connect your bank statements**: Upload bank statement files or set up a direct API feed. Nanonets supports multiple file formats and bank APIs.
+
+## Step 2: Define Matching Rules
+
+1. **Set matching criteria**: Nanonets uses ML to learn matching patterns, but you can define initial rules:
+   - Exact amount match
+   - Date proximity (e.g., within 1 day)
+   - Fuzzy text matching on descriptions (e.g., "Invoice #123" vs "INV-123")
+2. **Configure tolerance levels**: For amounts, set a tolerance (e.g., $0.50) to handle minor differences due to fees or rounding.
+3. **Enable auto-learning**: Allow Nanonets to learn from your manual corrections to improve future matches.
+
+## Step 3: Run Initial Reconciliation
+
+1. **Click "Run Reconciliation"** to process your first batch of data.
+2. **Review the results**: Nanonets will show:
+   - **Matched transactions** (green)
+   - **Unmatched transactions** (red) – these require your attention
+   - **Potential matches** (yellow) – transactions that are close but not exact
+3. **Manually resolve unmatched items**: For each unmatched transaction, either:
+   - Create a manual match
+   - Flag as a true discrepancy (e.g., bank error, missing entry)
+   - Add a note for audit trail
+
+## Step 4: Automate Ongoing Reconciliation
+
+1. **Schedule regular imports**: Set up automated data pulls from your ERP and bank feeds (daily, weekly, or monthly).
+2. **Configure notifications**: Get alerts when new unmatched items appear or when discrepancies exceed a threshold.
+3. **Monitor the dashboard**: Nanonets provides a real-time view of reconciliation status, aging of unmatched items, and accuracy metrics.
+
+## Step 5: Audit and Improve
+
+1. **Review ML accuracy**: Periodically check the model's performance (precision, recall) and retrain if needed.
+2. **Export reports**: Generate reconciliation reports for auditors, including matched and unmatched items with timestamps.
+3. **Iterate on rules**: As your business changes, update matching rules or add new data sources.
+
+## Best Practices
+
+- **Standardize data formats**: Ensure consistent naming conventions in your ERP and bank statements.
+- **Start with a pilot**: Test with one bank account and one GL account before scaling.
+- **Involve IT**: Work with your IT team to set up secure API connections.
+- **Document exceptions**: Keep a log of why certain transactions never match (e.g., recurring fees) to reduce noise.
+
+## Conclusion
+
+By implementing ML-powered reconciliation with Nanonets, you can reduce manual effort by over 80%, close books faster, and improve accuracy. The system learns over time, making it smarter with each reconciliation cycle.

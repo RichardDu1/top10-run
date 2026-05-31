@@ -1,0 +1,61 @@
+---
+title: "Automating Purchase Order Generation from Inventory Reorder Points with AI Demand Forecasting"
+description: "This workflow guides inventory managers in setting up an automated system that triggers purchase orders when stock hits reorder points, using AI demand forecasting to optimize order quantities and timing."
+targetRole: ["inventory-manager"]
+targetIntent: ["automate-po-generation"]
+difficulty: "Intermediate"
+setupTime: "2-3 hours initial setup, then ongoing maintenance"
+costEstimate: "$100 - $500/mo (depending on scale and tools chosen)"
+roi: "Saves 10-20 hours/week, reduces stockouts by 30%, lowers carrying costs by 15%"
+toolsUsed: ["netsuite","zapier","loky-ai"]
+---
+
+## Automating Purchase Order Generation from Inventory Reorder Points with AI Demand Forecasting
+
+### Overview
+This workflow automates the creation of purchase orders (POs) when inventory levels drop to predefined reorder points, enhanced by AI demand forecasting to adjust reorder quantities dynamically. It integrates your ERP/Inventory system with an automation platform and an AI forecasting tool.
+
+### Prerequisites
+- Access to an inventory management system (e.g., NetSuite, QuickBooks Commerce, Zoho Inventory)
+- An automation platform (e.g., Zapier, Make)
+- An AI demand forecasting tool (e.g., Loky AI, EazyStock)
+- Basic understanding of APIs and webhooks
+
+### Step 1: Set Up AI Demand Forecasting
+1. Choose an AI forecasting tool (e.g., Loky AI).
+2. Connect it to your inventory system via API or CSV upload.
+3. Configure forecast parameters: historical sales data (at least 12 months), lead times, seasonality, promotions.
+4. Generate forecast outputs: predicted demand for each SKU for the next 4-12 weeks.
+5. Set reorder points and safety stock levels based on forecasted demand and lead time variability.
+
+### Step 2: Configure Reorder Point Alerts in Inventory System
+1. In your inventory system (e.g., NetSuite), enable reorder point notifications.
+2. For each SKU, set the reorder point = forecasted demand during lead time + safety stock.
+3. Configure the system to send a webhook or email alert when stock falls below reorder point.
+
+### Step 3: Build Automation in Zapier
+1. Create a new Zap in Zapier.
+2. Trigger: Choose "Webhook" or your inventory system's app (e.g., NetSuite) for "New Event" when reorder point is hit.
+3. Action 1: Fetch forecast data from AI tool (use API call action).
+4. Action 2: Calculate order quantity = forecasted demand for next lead time + safety stock - current stock.
+5. Action 3: Create a purchase order in your inventory system (e.g., NetSuite "Create Purchase Order" action).
+6. Action 4: Send notification to procurement team (e.g., email or Slack).
+
+### Step 4: Test and Refine
+1. Run a test with a low-stock SKU.
+2. Verify PO is created with correct quantity and vendor.
+3. Adjust reorder points and safety stock based on forecast accuracy.
+4. Monitor for false triggers (e.g., due to data lag).
+
+### Step 5: Monitor and Optimize
+1. Review forecast accuracy monthly.
+2. Update historical data and retrain AI model quarterly.
+3. Adjust automation rules for seasonal spikes or new products.
+
+### Troubleshooting
+- **No PO created**: Check webhook delivery, API keys, and field mappings.
+- **Incorrect quantities**: Verify forecast data and formula.
+- **Duplicate POs**: Add deduplication logic (e.g., check if PO already exists for that SKU).
+
+### Conclusion
+This workflow reduces manual effort, minimizes stockouts, and optimizes inventory levels. Start with a pilot SKU group and scale gradually.

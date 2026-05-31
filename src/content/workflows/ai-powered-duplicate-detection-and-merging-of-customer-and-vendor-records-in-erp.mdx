@@ -1,0 +1,62 @@
+---
+title: "AI-Powered Duplicate Detection and Merging of Customer and Vendor Records in ERP"
+description: "A step-by-step guide for data stewards to cleanse master data by detecting and merging duplicate customer and vendor records using AI tools like Energent.ai and DedupFuzzy, integrated with ERP systems."
+targetRole: ["data-steward"]
+targetIntent: ["cleanse-master-data"]
+difficulty: "Intermediate"
+setupTime: "2-4 hours"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 20 hours/week and reduces data errors by 90%"
+toolsUsed: ["energent-ai","dedupfuzzy"]
+---
+
+## Overview
+
+Duplicate customer and vendor records in ERP systems cause billing errors, misdirected shipments, and inaccurate reporting. This guide leverages AI-powered tools to automatically detect and merge duplicates, ensuring clean master data.
+
+## Prerequisites
+
+- Access to your ERP system (e.g., SAP, Oracle, Microsoft Dynamics)
+- Export of customer and vendor master data (CSV or Excel)
+- Accounts on Energent.ai and DedupFuzzy (free tiers available)
+
+## Step 1: Export Master Data from ERP
+
+Export customer and vendor records as CSV files. Include fields like Name, Address, Phone, Email, Tax ID, and ERP ID.
+
+## Step 2: Upload Data to DedupFuzzy for Initial Scan
+
+1. Go to [DedupFuzzy](https://dedupfuzzy.com) and upload your CSV.
+2. Use AI-assisted matching to find near-duplicates. Adjust similarity thresholds (e.g., 85% for names, 90% for addresses).
+3. Review the list of potential duplicates. Mark pairs for merging.
+4. Export the deduplication report as CSV.
+
+## Step 3: Deploy Energent.ai for Automated Deduplication
+
+1. Sign up at [Energent.ai](https://energent.ai) and install the AI teammate on your desktop.
+2. Connect the AI to your ERP system (no-code integration via screen scraping).
+3. Configure rules: The AI will monitor new and existing records for duplicates.
+4. When a duplicate is detected, the AI presents options: merge, delete, or review.
+5. Approve actions; the AI learns from your decisions over time.
+
+## Step 4: Merge Records in ERP
+
+- For each duplicate pair, decide which record to keep (master) and which to merge/delete.
+- Use the AI's merge function to consolidate data: combine addresses, phone numbers, and transaction history.
+- Update related records (orders, invoices) to point to the master record.
+
+## Step 5: Validate and Monitor
+
+- Run a sample check: query the ERP for duplicates using built-in tools.
+- Set up weekly reports from Energent.ai on deduplication activity.
+- Adjust AI sensitivity as needed.
+
+## Best Practices
+
+- Always backup data before merging.
+- Involve sales and procurement teams to verify critical records.
+- Schedule regular deduplication runs (e.g., monthly).
+
+## Conclusion
+
+By combining DedupFuzzy's initial scan with Energent.ai's continuous monitoring, you can maintain a clean ERP master data set, reducing errors and improving operational efficiency.

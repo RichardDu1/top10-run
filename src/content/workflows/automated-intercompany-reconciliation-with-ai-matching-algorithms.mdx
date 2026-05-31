@@ -1,0 +1,75 @@
+---
+title: "Automated Intercompany Reconciliation with AI Matching Algorithms"
+description: "A step-by-step guide for intercompany accountants to automate reconciliation reports using AI-powered matching, reducing manual effort and errors."
+targetRole: ["intercompany-accountant"]
+targetIntent: ["automate-intercompany-reconciliation"]
+difficulty: "Intermediate"
+setupTime: "2-4 hours initial setup, then ongoing automation"
+costEstimate: "$500 - $2,000/month (depending on volume and tool tier)"
+roi: "Saves 20+ hours per month, reduces reconciliation errors by 90%"
+toolsUsed: ["highradius-record-to-report","blackline-reconciliation-automation"]
+---
+
+## Automated Generation of Intercompany Reconciliation Reports Using AI Matching Algorithms
+
+Intercompany reconciliation is a critical but time-consuming process for finance teams. With AI matching algorithms, you can automate the matching of transactions between entities, flag exceptions, and generate reconciliation reports in minutes. This guide walks you through setting up an automated workflow using HighRadius Record-to-Report and BlackLine Reconciliation Automation.
+
+### Prerequisites
+- Access to your ERP system (e.g., SAP, Oracle, NetSuite)
+- Intercompany transaction data in a structured format (CSV, Excel, or direct API)
+- Admin permissions to configure integrations
+
+### Step 1: Choose Your AI Reconciliation Tool
+Select a tool that supports intercompany matching. Top options include:
+- **HighRadius Record-to-Report**: Offers agentic AI for intercompany management, including real-time transaction matching and journal entry automation.
+- **BlackLine Reconciliation Automation**: Provides AI-driven matching rules and exception handling.
+
+For this guide, we'll use HighRadius as the primary tool.
+
+### Step 2: Connect Your Data Sources
+1. Log into HighRadius and navigate to the **Integrations** section.
+2. Add your ERP system as a data source. Use pre-built connectors for SAP, Oracle, or NetSuite.
+3. Configure the data sync frequency (e.g., daily or real-time).
+4. Map your intercompany accounts (e.g., due from/due to accounts) to ensure correct matching.
+
+### Step 3: Define Matching Rules
+1. Go to **Matching Rules** in HighRadius.
+2. Create a new rule set for intercompany transactions.
+3. Set matching criteria:
+   - **Exact match**: Amount, currency, date, and counterparty.
+   - **Fuzzy match**: Allow slight variances (e.g., +/- 1% amount, date within 2 days).
+4. Enable AI learning to automatically improve matching over time.
+
+### Step 4: Automate Transaction Matching
+1. Schedule the matching process to run after each data sync.
+2. HighRadius will automatically match transactions and create reconciliation records.
+3. Unmatched items are flagged as exceptions for review.
+
+### Step 5: Handle Exceptions
+1. Review the **Exception Dashboard** daily.
+2. For each exception, investigate the discrepancy (e.g., missing invoice, timing difference).
+3. Use the built-in communication tools to notify the counterparty entity.
+4. Once resolved, mark the exception as cleared.
+
+### Step 6: Generate Reconciliation Reports
+1. Navigate to **Reports** and select **Intercompany Reconciliation Report**.
+2. Choose the reporting period (e.g., monthly).
+3. Customize the report layout: include matched items, exceptions, and journal entries.
+4. Schedule automatic report generation and email distribution to stakeholders.
+
+### Step 7: Automate Journal Entries
+1. For matched items, configure automatic journal entry creation in your ERP.
+2. HighRadius can post adjusting entries directly via API.
+3. Set approval workflows to ensure control.
+
+### Best Practices
+- **Regularly review matching rules** to adapt to changing transaction patterns.
+- **Maintain a master data file** for intercompany counterparties to avoid mismatches.
+- **Audit the AI matches** periodically to ensure accuracy.
+
+### Troubleshooting
+- **Data sync failures**: Check API credentials and network connectivity.
+- **Low match rates**: Adjust fuzzy matching thresholds or add more matching criteria.
+- **Duplicate entries**: Enable deduplication rules in the tool.
+
+By following this workflow, you can reduce manual reconciliation effort by over 80% and close the books faster.

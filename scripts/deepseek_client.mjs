@@ -2,7 +2,7 @@
 export const DEEPSEEK_API_KEY = 'sk-a2dc0881aaac4bfcbe75b200177655b1';
 export const API_URL = 'https://api.deepseek.com/v1/chat/completions';
 
-export async function callDeepSeek(prompt, systemPrompt = 'You are an expert tech analyst.', temperature = 0.7) {
+export async function callDeepSeek(prompt, systemPrompt = 'You are an expert content strategist and B2B tech analyst.') {
   const maxRetries = 3;
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
@@ -19,7 +19,7 @@ export async function callDeepSeek(prompt, systemPrompt = 'You are an expert tec
             { role: 'system', content: systemPrompt },
             { role: 'user', content: prompt }
           ],
-          temperature: temperature
+          temperature: 0.7
         })
       });
 
@@ -39,6 +39,7 @@ export async function callDeepSeek(prompt, systemPrompt = 'You are an expert tec
         console.error('Max retries reached. Returning null.');
         return null;
       }
+      // Exponential backoff
       await new Promise(res => setTimeout(res, attempt * 2000));
     }
   }

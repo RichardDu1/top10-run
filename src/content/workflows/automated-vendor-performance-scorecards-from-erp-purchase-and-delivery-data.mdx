@@ -1,0 +1,82 @@
+---
+title: "Automated Vendor Performance Scorecards from ERP Purchase and Delivery Data"
+description: "Learn how to automatically generate vendor scorecards by pulling purchase order and delivery data from your ERP system, using AI to calculate KPIs like on-time delivery, quality rejection rates, and cost performance."
+targetRole: ["procurement-manager"]
+targetIntent: ["automate-vendor-evaluation"]
+difficulty: "Intermediate"
+setupTime: "2-3 hours initial setup, then automated"
+costEstimate: "$0 - $500/mo depending on tools"
+roi: "Saves 15+ hours per month on manual reporting, improves supplier accountability"
+toolsUsed: ["ivalua","zapier","tableau","openai"]
+---
+
+## Overview
+
+This guide walks you through setting up an automated vendor performance scorecard system that extracts purchase order and delivery data from your ERP, calculates key metrics, and generates visual scorecards. The workflow uses Ivalua for supplier management, Zapier for automation, Tableau for dashboards, and OpenAI for AI-powered analysis.
+
+## Prerequisites
+
+- Access to your ERP system (SAP, Oracle, Microsoft Dynamics, etc.) with API or export capabilities
+- Admin rights to connect tools via Zapier or similar
+- Basic familiarity with spreadsheet formulas and dashboard tools
+
+## Step 1: Define Scorecard Metrics
+
+Identify the KPIs that matter to your procurement team. Common metrics include:
+- **On-Time Delivery (OTD)**: % of orders delivered on or before the promised date
+- **Quality Rejection Rate**: % of received items rejected due to defects
+- **Cost Performance**: Actual vs. negotiated price variance
+- **Lead Time Accuracy**: Variance between promised and actual lead time
+- **Compliance**: % of orders adhering to contract terms
+
+Document these metrics and their calculation formulas.
+
+## Step 2: Extract Data from ERP
+
+Use your ERP's reporting module or API to export purchase order and goods receipt data. Key fields needed:
+- Purchase Order ID, Vendor ID, Order Date, Promised Delivery Date
+- Actual Delivery Date, Quantity Ordered, Quantity Received, Quantity Rejected
+- Unit Price, Total Amount
+
+If your ERP supports scheduled exports, set up a daily CSV export to a cloud folder (e.g., Google Drive, Dropbox). Alternatively, use Zapier's ERP integrations (e.g., SAP, Oracle NetSuite) to pull data automatically.
+
+## Step 3: Connect Data to Automation Platform
+
+Create a Zapier workflow:
+1. **Trigger**: New file in cloud folder (or scheduled ERP data pull)
+2. **Action**: Parse CSV and map fields to a Google Sheet or database
+3. **Action**: Run calculations using Google Sheets formulas or a script
+
+Example Google Sheets formulas:
+- OTD: `=COUNTIFS(DeliveryDate, "<="&PromisedDate, VendorID, vendor)/COUNTIF(VendorID, vendor)`
+- Quality Rejection Rate: `=SUMIFS(RejectedQty, VendorID, vendor)/SUMIFS(ReceivedQty, VendorID, vendor)`
+
+## Step 4: Generate AI-Powered Insights
+
+Use OpenAI's API (via Zapier or custom script) to analyze scorecard data and generate natural language summaries. For example:
+- "Vendor A has 95% on-time delivery but a 5% rejection rate, which is above the 2% threshold."
+- "Vendor B's cost performance improved 3% this quarter."
+
+Set up a Zapier step that sends scorecard data to OpenAI and stores the response.
+
+## Step 5: Build Visual Dashboard
+
+Connect your Google Sheet or database to Tableau (or Power BI). Create a dashboard with:
+- Scorecard cards per vendor (OTD, Quality, Cost, Compliance)
+- Trend lines over time
+- Color-coded alerts (green/yellow/red) based on thresholds
+- AI-generated summary text box
+
+Publish the dashboard and set up automatic refresh (daily).
+
+## Step 6: Automate Distribution
+
+Use Zapier to send the dashboard link or a PDF snapshot via email to stakeholders on a weekly/monthly schedule. Include the AI summary in the email body.
+
+## Step 7: Iterate and Improve
+
+Gather feedback from your team and adjust metrics, thresholds, and automation frequency. Consider integrating with Ivalua for advanced supplier risk scoring and collaboration.
+
+## Conclusion
+
+By following this workflow, you eliminate manual data collection and reporting, gain real-time visibility into vendor performance, and empower your procurement team to make data-driven decisions. The system scales with your vendor base and adapts to changing business needs.

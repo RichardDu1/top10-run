@@ -1,0 +1,82 @@
+---
+title: "AI-Driven Production Order Allocation: Optimize Work Center Scheduling with Capacity Planning"
+description: "This workflow guides production planners in using AI-powered tools to automatically allocate production orders to work centers based on real-time capacity data, reducing manual scheduling effort and improving throughput."
+targetRole: ["production-planner"]
+targetIntent: ["optimize-production-scheduling"]
+difficulty: "Intermediate"
+setupTime: "2-3 hours initial setup, then ongoing"
+costEstimate: "$500 - $2,000/mo (depending on scale and tool choice)"
+roi: "Saves 20+ hours/week in manual scheduling, reduces late orders by 30%"
+toolsUsed: ["katana","machinemetrics","intelligent-ai-scheduler"]
+---
+
+## Overview
+
+This workflow leverages AI capacity planning to intelligently allocate production orders to work centers. By integrating real-time machine data and order priorities, you can automate scheduling decisions, minimize bottlenecks, and maximize throughput.
+
+## Prerequisites
+
+- Access to a production management system (e.g., Katana)
+- IoT or machine monitoring data (e.g., MachineMetrics)
+- AI scheduling tool (e.g., Intelligent AI Scheduler)
+- API access or integration platform (e.g., Zapier)
+
+## Step 1: Connect Machine Data to Capacity Planning
+
+First, ensure your work centers are equipped with sensors or manual data entry to capture real-time status (running, idle, downtime). Use a tool like **MachineMetrics** to aggregate this data.
+
+- Install MachineMetrics edge devices or connect via OPC-UA.
+- Configure dashboards to show OEE, utilization, and remaining capacity.
+- Export capacity data via API to your scheduling system.
+
+## Step 2: Integrate Production Orders with AI Scheduler
+
+Use **Katana** (or your ERP) to manage production orders. Ensure each order has:
+- Due date
+- Required work center
+- Estimated runtime
+- Priority (e.g., rush, normal)
+
+Connect Katana to an AI scheduling engine like **Intelligent AI Scheduler** via API or middleware.
+
+- Map order fields to the scheduler’s input schema.
+- Set scheduling rules: minimize changeover time, respect maintenance windows, prioritize urgent orders.
+
+## Step 3: Configure AI Capacity Planning Model
+
+In the AI scheduler, define:
+- Work centers with their capacities (hours per shift, efficiency factor)
+- Shift calendars
+- Maintenance schedules
+- Setup times between product families
+
+Train the model on historical data (optional) or use rule-based optimization.
+
+## Step 4: Automate Order Allocation
+
+Set the AI scheduler to run periodically (e.g., every hour) or trigger on new order creation. The AI will:
+- Evaluate current work center load
+- Predict completion times
+- Assign orders to the best work center
+- Generate a Gantt chart or schedule
+
+Review the proposed schedule and manually override if needed.
+
+## Step 5: Monitor and Refine
+
+Track KPIs:
+- On-time delivery
+- Work center utilization
+- Queue times
+
+Use feedback loops to adjust AI parameters (e.g., weight of due date vs. efficiency).
+
+## Tools Used
+
+- **Katana**: Production order management and inventory tracking.
+- **MachineMetrics**: Real-time machine monitoring and OEE.
+- **Intelligent AI Scheduler**: AI-driven scheduling optimization.
+
+## Conclusion
+
+By implementing this workflow, you replace manual, error-prone scheduling with AI that adapts to real-time conditions. The result is higher throughput, lower overtime, and more predictable delivery dates.

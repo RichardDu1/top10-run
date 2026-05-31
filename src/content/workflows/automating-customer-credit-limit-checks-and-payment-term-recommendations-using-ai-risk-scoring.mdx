@@ -1,0 +1,59 @@
+---
+title: "Automating Customer Credit Limit Checks and Payment Term Recommendations Using AI Risk Scoring"
+description: "A step-by-step guide for credit managers to automate credit assessments by integrating AI risk scoring tools like Credit Decisioning AI and Anytime Collect, reducing manual reviews and accelerating customer onboarding."
+targetRole: ["credit-manager"]
+targetIntent: ["automate-credit-assessment"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$0 - $500/mo"
+roi: "Saves 15 hours/week"
+toolsUsed: ["credit-decisioning-ai","anytime-collect"]
+---
+
+## Overview
+
+This workflow automates customer credit limit checks and payment term recommendations using AI risk scoring. By integrating a credit decisioning platform with your CRM or ERP, you can instantly assess risk and suggest optimal payment terms, reducing manual effort and improving cash flow.
+
+## Prerequisites
+
+- Access to a CRM or ERP system (e.g., Salesforce, NetSuite)
+- API access for data integration
+- A credit decisioning AI tool (e.g., Credit Decisioning AI)
+- A collections automation tool (e.g., Anytime Collect)
+
+## Step 1: Set Up Credit Decisioning AI
+
+1. Sign up for [Credit Decisioning AI](https://creditdecisioning.ai) and create an account.
+2. Configure your risk scoring model by uploading historical payment data and credit bureau reports.
+3. Define credit limit thresholds (e.g., low risk: $50,000, medium risk: $20,000, high risk: $5,000).
+4. Set payment term recommendations (e.g., low risk: Net 60, medium risk: Net 30, high risk: Net 15 or prepayment).
+
+## Step 2: Integrate with Your CRM/ERP
+
+1. Use the API provided by Credit Decisioning AI to connect with your CRM (e.g., Salesforce).
+2. Map customer fields (e.g., company name, revenue, industry) to the AI model inputs.
+3. Set up a webhook or scheduled job to trigger credit checks on new customer creation or order placement.
+
+## Step 3: Automate Credit Limit Checks
+
+1. In your CRM, create a custom field for "Credit Limit" and "Payment Terms".
+2. When a new customer is added or an order exceeds a threshold, the AI model automatically scores the customer.
+3. The system updates the credit limit and recommended payment terms in the CRM.
+4. If the score is high risk, trigger an alert to the credit manager for manual review.
+
+## Step 4: Integrate with Collections Automation
+
+1. Connect [Anytime Collect](https://anytimecollect.com) to your CRM.
+2. Sync customer credit limits and payment terms from the CRM to Anytime Collect.
+3. Configure automated dunning emails based on payment terms (e.g., send reminder 5 days before due date).
+4. Set up escalation rules for overdue accounts based on risk score.
+
+## Step 5: Monitor and Optimize
+
+1. Review AI scoring accuracy monthly by comparing predicted risk vs actual payment behavior.
+2. Adjust model parameters or thresholds as needed.
+3. Use dashboards in Credit Decisioning AI to track approval rates, average credit limits, and days sales outstanding (DSO).
+
+## Conclusion
+
+By automating credit limit checks and payment term recommendations with AI risk scoring, you can reduce manual review time by 80%, accelerate customer onboarding, and improve cash flow. This workflow is scalable and can be customized to fit your business rules.

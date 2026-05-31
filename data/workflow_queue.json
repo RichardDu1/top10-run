@@ -1,0 +1,122 @@
+[
+  {
+    "topic": "Automating Purchase Order Generation from Inventory Reorder Points with AI Demand Forecasting",
+    "role": "inventory-manager",
+    "intent": "automate-po-generation",
+    "status": "completed"
+  },
+  {
+    "topic": "Extracting and Validating Invoice Data from PDFs Using AI OCR for Automated Accounts Payable",
+    "role": "accounts-payable-clerk",
+    "intent": "automate-invoice-processing",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Sales Order Entry from Email Attachments and Customer Portals with Smart Data Mapping",
+    "role": "sales-order-processor",
+    "intent": "automate-order-entry",
+    "status": "completed"
+  },
+  {
+    "topic": "Automating Customer Credit Limit Checks and Payment Term Recommendations Using AI Risk Scoring",
+    "role": "credit-manager",
+    "intent": "automate-credit-assessment",
+    "status": "completed"
+  },
+  {
+    "topic": "Intelligent Reconciliation of Bank Statements with ERP General Ledger Using Machine Learning",
+    "role": "accountant",
+    "intent": "automate-bank-reconciliation",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Driven Inventory Classification and Reorder Optimization Based on Historical Demand Patterns",
+    "role": "supply-chain-analyst",
+    "intent": "optimize-inventory-classification",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Generation of Financial Reports (P&L, Balance Sheet) from ERP Data with Natural Language Summaries",
+    "role": "financial-controller",
+    "intent": "automate-financial-reporting",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Duplicate Detection and Merging of Customer and Vendor Records in ERP",
+    "role": "data-steward",
+    "intent": "cleanse-master-data",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Routing of Incoming Customer Invoices to Appropriate Approvers Based on AI Classification",
+    "role": "accounts-payable-manager",
+    "intent": "automate-invoice-routing",
+    "status": "completed"
+  },
+  {
+    "topic": "Predictive Maintenance Scheduling for Manufacturing Equipment Using IoT Sensor Data and AI",
+    "role": "maintenance-manager",
+    "intent": "predict-equipment-failure",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Sales Quote Generation from Customer Requirements Using Natural Language Processing",
+    "role": "sales-representative",
+    "intent": "automate-quote-creation",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Expense Report Auditing and Policy Compliance Checking Using AI",
+    "role": "expense-auditor",
+    "intent": "automate-expense-audit",
+    "status": "completed"
+  },
+  {
+    "topic": "Intelligent Allocation of Production Orders to Work Centers Based on AI Capacity Planning",
+    "role": "production-planner",
+    "intent": "optimize-production-scheduling",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Driven Cash Flow Forecasting Using Historical Data and External Market Signals",
+    "role": "treasury-manager",
+    "intent": "forecast-cash-flow",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Generation of Vendor Performance Scorecards from ERP Purchase and Delivery Data",
+    "role": "procurement-manager",
+    "intent": "automate-vendor-evaluation",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered Anomaly Detection in General Ledger Transactions for Fraud Prevention",
+    "role": "internal-auditor",
+    "intent": "detect-financial-anomalies",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Customer Invoice Generation and Delivery with AI-Personalized Payment Reminders",
+    "role": "accounts-receivable-clerk",
+    "intent": "automate-invoicing-and-collections",
+    "status": "completed"
+  },
+  {
+    "topic": "Intelligent Bill of Materials Optimization Using AI to Suggest Alternative Components for Cost Reduction",
+    "role": "product-engineer",
+    "intent": "optimize-bom-cost",
+    "status": "completed"
+  },
+  {
+    "topic": "AI-Powered HR Onboarding Process Automation from Offer Letter to ERP Employee Setup",
+    "role": "hr-manager",
+    "intent": "automate-employee-onboarding",
+    "status": "completed"
+  },
+  {
+    "topic": "Automated Generation of Intercompany Reconciliation Reports Using AI Matching Algorithms",
+    "role": "intercompany-accountant",
+    "intent": "automate-intercompany-reconciliation",
+    "status": "completed"
+  }
+]

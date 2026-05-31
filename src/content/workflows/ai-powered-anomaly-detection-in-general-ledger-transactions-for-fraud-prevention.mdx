@@ -1,0 +1,86 @@
+---
+title: "AI-Powered Anomaly Detection in General Ledger Transactions for Fraud Prevention"
+description: "Leverage AI anomaly detection tools to automatically flag unusual GL transactions, reducing manual review time and catching fraud early."
+targetRole: ["internal-auditor"]
+targetIntent: ["detect-financial-anomalies"]
+difficulty: "Intermediate"
+setupTime: "2-3 hours"
+costEstimate: "$0 - $500/mo"
+roi: "Saves 15 hours/week"
+toolsUsed: ["crunchmetrics","anodot","splunk"]
+---
+
+## AI-Powered Anomaly Detection in General Ledger Transactions for Fraud Prevention
+
+This workflow guides internal auditors through setting up AI-powered anomaly detection to identify suspicious general ledger (GL) transactions. By leveraging real-time monitoring and machine learning, you can reduce manual review time and catch fraud early.
+
+### Prerequisites
+- Access to your GL data (e.g., CSV export, API connection)
+- An account with an AI anomaly detection platform (e.g., Crunchmetrics, Anodot, or Splunk)
+- Basic understanding of GL accounts and transaction types
+
+### Step 1: Export GL Data
+Export your GL transactions for the past 12 months from your ERP system. Include fields: date, account number, amount, description, vendor/customer ID, and user who entered the transaction. Save as CSV.
+
+### Step 2: Choose an AI Anomaly Detection Tool
+Select a tool that fits your budget and technical requirements. For this guide, we'll use **Crunchmetrics** (real-time AI anomaly detection) as the primary example.
+
+- **Crunchmetrics**: Ideal for real-time monitoring and proactive alerts. Offers a free tier for small datasets.
+- **Anodot**: Enterprise-grade, handles large volumes, and integrates with major ERPs.
+- **Splunk**: Powerful for organizations already using Splunk for log analysis; requires more setup.
+
+### Step 3: Upload Data to the Platform
+1. Log into your Crunchmetrics account.
+2. Navigate to **Data Sources** > **Upload CSV**.
+3. Map columns: date, amount, account, description, etc.
+4. Set the time granularity (daily or weekly).
+5. Click **Ingest**. The platform will automatically learn normal patterns.
+
+### Step 4: Configure Anomaly Detection Rules
+Define what constitutes an anomaly for your organization:
+- **Amount thresholds**: Flag transactions above $10,000 or 3 standard deviations from the mean.
+- **Account-specific rules**: For high-risk accounts (e.g., cash, payroll), tighten sensitivity.
+- **Temporal patterns**: Flag transactions occurring outside business hours or on weekends.
+- **Vendor/user behavior**: Flag new vendors or users with unusual activity.
+
+In Crunchmetrics, go to **Anomaly Rules** and create rules using the visual builder. For example:
+- Rule: "Amount > $10,000 AND Account = 'Cash' AND Time = Weekend" → Alert severity: High.
+
+### Step 5: Set Up Alerts and Notifications
+Configure alerts to be sent via email, Slack, or SMS when anomalies are detected.
+1. Go to **Alerts** > **Create Alert**.
+2. Choose severity levels (Low, Medium, High).
+3. Set notification channels (e.g., email to audit team).
+4. Enable daily digest or real-time alerts.
+
+### Step 6: Review and Investigate Anomalies
+When an alert triggers:
+1. Open the anomaly in the dashboard. View the transaction details and surrounding context.
+2. Use the **Explainability** feature (if available) to see why the AI flagged it (e.g., "Amount 5x higher than historical average for this account").
+3. Investigate by cross-referencing with supporting documents (invoices, approvals).
+4. Mark as **True Positive** (fraud) or **False Positive** (explainable).
+
+### Step 7: Refine the Model
+Over time, feed back your decisions to the AI to improve accuracy.
+- In Crunchmetrics, use the **Feedback** button on each anomaly to label it.
+- The model will adjust its thresholds and reduce false positives.
+
+### Step 8: Generate Audit Reports
+Export a summary of detected anomalies for audit documentation.
+1. Go to **Reports** > **Anomaly Summary**.
+2. Select date range and severity.
+3. Export as PDF or CSV.
+4. Include in your audit workpapers.
+
+### Best Practices
+- Start with a small dataset (3 months) to validate the tool.
+- Involve IT for API integrations if using real-time feeds.
+- Review alerts daily to maintain responsiveness.
+- Combine with rule-based checks for known fraud patterns.
+
+### Troubleshooting
+- **Too many false positives**: Increase thresholds or add exclusion rules for known seasonal spikes.
+- **No anomalies detected**: Lower sensitivity or check data quality (missing fields).
+- **Integration issues**: Ensure API keys have read-only access to GL data.
+
+By following this workflow, you can automate the detection of unusual GL transactions, freeing up time for deeper investigation and reducing fraud risk.

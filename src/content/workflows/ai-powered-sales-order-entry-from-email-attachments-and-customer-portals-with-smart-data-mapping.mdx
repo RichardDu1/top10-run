@@ -1,0 +1,90 @@
+---
+title: "AI-Powered Sales Order Entry from Email Attachments and Customer Portals with Smart Data Mapping"
+description: "Automate the entire sales order entry process by using AI to extract order data from email attachments and customer portals, validate it against your ERP, and create ready-to-submit sales orders with smart data mapping."
+targetRole: ["sales-order-processor"]
+targetIntent: ["automate-order-entry"]
+difficulty: "Intermediate"
+setupTime: "2-4 hours"
+costEstimate: "$0 - $200/mo"
+roi: "Saves 20+ hours/week"
+toolsUsed: ["ordéri-ai","zapier"]
+---
+
+## Overview
+
+This workflow automates sales order entry by leveraging AI to capture orders from email attachments (PDF, Excel, images) and customer portals, then maps the data to your ERP fields. It eliminates manual rekeying, reduces errors, and speeds up order processing.
+
+## Prerequisites
+
+- An account with **Ordéri AI** (or similar AI order entry tool)
+- Access to your ERP system (e.g., NetSuite, SAP, Microsoft Dynamics)
+- A **Zapier** account (free tier available) for connecting email and portals
+- Email inbox (Gmail, Outlook) or customer portal access
+
+## Step-by-Step Guide
+
+### Step 1: Set Up Ordéri AI
+
+1. Sign up at [ordéri.ai](https://ordéri.ai) (free trial available).
+2. Connect your ERP system by providing API credentials or uploading a sample data file for mapping.
+3. Configure **Smart Data Mapping**:
+   - Map fields like Customer Name, PO Number, SKU, Quantity, Unit Price, etc.
+   - Use AI to learn from past orders; Ordéri will auto-map common fields.
+
+### Step 2: Connect Email Inbox
+
+1. In Ordéri, go to **Integrations > Email**.
+2. Connect your email account (Gmail, Outlook, or IMAP).
+3. Set up rules:
+   - Filter emails by subject keywords (e.g., "Purchase Order", "Order")
+   - Specify attachment types (PDF, Excel, images)
+4. Enable **Auto-Processing**: Ordéri will automatically extract data from attachments.
+
+### Step 3: Connect Customer Portal (Optional)
+
+If customers submit orders via a portal:
+1. Use **Zapier** to connect the portal to Ordéri.
+   - Create a Zap: Trigger when a new order is submitted in the portal.
+   - Action: Send order data (as JSON or file) to Ordéri via webhook.
+2. Alternatively, use Ordéri's built-in portal connector (if supported).
+
+### Step 4: Configure Validation Rules
+
+1. In Ordéri, set up validation rules:
+   - Check SKU existence in ERP
+   - Verify customer credit limit
+   - Flag quantity discrepancies
+2. Define **Exception Handling**:
+   - Auto-approve orders under $500
+   - Flag orders with missing fields for manual review
+
+### Step 5: Test the Workflow
+
+1. Send a test email with a sample purchase order PDF.
+2. Ordéri will:
+   - Extract line items
+   - Map data to ERP fields
+   - Create a draft sales order in your ERP
+3. Review the order in your ERP to ensure accuracy.
+
+### Step 6: Go Live
+
+1. Activate the email rules and portal integration.
+2. Monitor the dashboard for exceptions.
+3. Train the AI by correcting any mis-mapped fields (Ordéri learns over time).
+
+## Best Practices
+
+- **Standardize PO formats**: Encourage customers to use consistent templates.
+- **Set up alerts**: Get notified when orders are flagged for review.
+- **Regular audits**: Check a sample of auto-processed orders weekly.
+
+## Troubleshooting
+
+- **Data mapping errors**: Re-train the AI by uploading corrected examples.
+- **Email not processed**: Check spam folder and email integration status.
+- **ERP sync failure**: Verify API credentials and field mappings.
+
+## Conclusion
+
+By implementing this workflow, you can reduce order entry time by 80% and eliminate manual errors. Ordéri AI handles the heavy lifting, while Zapier bridges any gaps with customer portals.

@@ -1,0 +1,90 @@
+---
+title: "AI-Driven Inventory Classification and Reorder Optimization Based on Historical Demand Patterns"
+description: "A step-by-step guide for supply-chain analysts to leverage AI tools for ABC-XYZ inventory classification and dynamic reorder point calculation using historical demand data."
+targetRole: ["supply-chain-analyst"]
+targetIntent: ["optimize-inventory-classification"]
+difficulty: "Intermediate"
+setupTime: "2-3 Hours"
+costEstimate: "$0 - $200/mo"
+roi: "Saves 15 hours/week and reduces stockouts by 30%"
+toolsUsed: ["netsuite-ai-inventory","zoho-inventory","inventory-planner"]
+---
+
+## Overview
+
+This workflow guides you through implementing an AI-driven inventory classification and reorder optimization system. By analyzing historical demand patterns, you'll categorize items using ABC-XYZ analysis and set dynamic reorder points to minimize stockouts and overstock.
+
+## Prerequisites
+
+- Access to historical sales data (at least 12 months)
+- Inventory management software with API or export capability
+- Basic understanding of inventory metrics (turnover, lead time, safety stock)
+
+## Step 1: Data Collection and Preparation
+
+Export historical demand data from your inventory system. Ensure the dataset includes:
+- Item SKU
+- Date of transaction
+- Quantity sold
+- Unit cost
+- Lead time (from supplier)
+
+Clean the data by removing returns, cancellations, and outliers. Use a tool like **Zoho Inventory** to automate data export via its REST API.
+
+## Step 2: ABC Classification Based on Revenue Contribution
+
+Calculate annual revenue per SKU (quantity sold × unit cost). Sort items descending by revenue and assign:
+- **A items**: top 20% contributing ~80% of revenue
+- **B items**: next 30% contributing ~15% of revenue
+- **C items**: bottom 50% contributing ~5% of revenue
+
+Use **NetSuite AI Inventory** to automate this classification with its built-in ABC analysis module.
+
+## Step 3: XYZ Classification Based on Demand Variability
+
+Compute the coefficient of variation (CV) for each SKU: CV = (standard deviation of demand) / (mean demand). Classify:
+- **X items**: CV < 0.5 (stable demand)
+- **Y items**: 0.5 ≤ CV < 1.0 (moderate variability)
+- **Z items**: CV ≥ 1.0 (erratic demand)
+
+**Inventory Planner** can automatically calculate CV and generate XYZ categories from historical data.
+
+## Step 4: Combine ABC and XYZ into a Matrix
+
+Create a 3×3 matrix combining both classifications. For example:
+- **AX**: high revenue, stable demand → low safety stock, frequent review
+- **CZ**: low revenue, erratic demand → minimal stock, reorder only on demand
+
+Use the matrix to define different replenishment strategies per segment.
+
+## Step 5: AI-Powered Demand Forecasting
+
+Feed historical demand into an AI forecasting model. Tools like **NetSuite AI Inventory** use machine learning to predict future demand considering seasonality, trends, and promotions. Generate forecasts for each SKU for the next 3-6 months.
+
+## Step 6: Dynamic Reorder Point Calculation
+
+For each SKU, calculate reorder point (ROP) using:
+ROP = (Average daily demand × Lead time) + Safety stock
+
+Safety stock is determined by service level target (e.g., 95%) and demand variability. Use AI to adjust safety stock dynamically based on forecast uncertainty. **Inventory Planner** provides automated ROP calculations with AI-driven safety stock optimization.
+
+## Step 7: Set Reorder Quantities (EOQ with AI)
+
+Compute Economic Order Quantity (EOQ) for each item, but enhance with AI to account for demand variability and supplier constraints. **Zoho Inventory** offers AI-assisted order quantity suggestions that balance holding costs and ordering costs.
+
+## Step 8: Implement and Monitor
+
+Upload the new classification and reorder parameters into your inventory system. Set up automated alerts for low stock and review the matrix quarterly. Use dashboards in **NetSuite AI Inventory** to monitor service levels, inventory turnover, and stockout rates.
+
+## Tools Used
+
+- **NetSuite AI Inventory**: Enterprise-grade AI for ABC analysis, demand forecasting, and reorder optimization.
+- **Zoho Inventory**: Mid-market tool with AI-powered order suggestions and API for data export.
+- **Inventory Planner**: Specialized in demand forecasting and safety stock optimization with ABC-XYZ support.
+
+## Expected Outcomes
+
+- Reduced stockouts by 30%
+- Lower inventory holding costs by 15%
+- Improved inventory turnover by 20%
+- Time savings of 15 hours per week on manual analysis

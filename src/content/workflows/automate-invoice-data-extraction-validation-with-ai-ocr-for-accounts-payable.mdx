@@ -1,0 +1,99 @@
+---
+title: "Automate Invoice Data Extraction & Validation with AI OCR for Accounts Payable"
+description: "Learn how to use AI-powered OCR tools to automatically extract and validate invoice data from PDFs, reducing manual data entry and errors in your accounts payable workflow."
+targetRole: ["accounts-payable-clerk"]
+targetIntent: ["automate-invoice-processing"]
+difficulty: "Intermediate"
+setupTime: "45 Minutes"
+costEstimate: "$0 - $50/mo"
+roi: "Saves 15 hours/week"
+toolsUsed: ["rossum","nanonets","zapier"]
+---
+
+## Overview
+
+This guide walks you through setting up an automated invoice processing pipeline using AI OCR tools. You'll extract key fields (vendor name, invoice number, date, total amount, line items) from PDF invoices, validate them against your ERP or accounting system, and handle exceptions.
+
+## Prerequisites
+
+- Access to a cloud storage folder (e.g., Google Drive, Dropbox) where invoices are received.
+- An account with an AI OCR platform (Rossum or Nanonets) – both offer free trials.
+- A Zapier account (free tier available) for automation.
+- Basic familiarity with your accounting software (e.g., QuickBooks, Xero, NetSuite).
+
+## Step 1: Choose an AI OCR Tool
+
+Select one of the following AI OCR platforms:
+
+- **Rossum**: Enterprise-grade, supports complex layouts, offers pre-built invoice models. [Start free trial](https://rossum.ai)
+- **Nanonets**: Easy to train, supports custom fields, integrates with many ERPs. [Start free trial](https://nanonets.com)
+
+Both tools use machine learning to extract data with high accuracy.
+
+## Step 2: Set Up Invoice Upload
+
+Create a dedicated email address or cloud folder for incoming invoices. For example:
+
+- **Email**: Set up a forwarding rule to send invoice PDFs to your OCR tool's ingestion email.
+- **Cloud Folder**: Connect your OCR tool to a Google Drive or Dropbox folder.
+
+In Rossum: Go to Settings > Document Upload > Email Upload and get your unique email address.
+In Nanonets: Use the API or Zapier to monitor a folder.
+
+## Step 3: Configure Extraction Fields
+
+Define the fields you need to extract. Common fields:
+
+- Vendor Name
+- Invoice Number
+- Invoice Date
+- Due Date
+- Total Amount (including tax)
+- Line Items (description, quantity, unit price, amount)
+- Tax Amount
+- Currency
+
+**Rossum**: Use the pre-built Invoice model – it automatically detects most fields. You can add custom fields via the Schema Editor.
+
+**Nanonets**: Upload a few sample invoices, then use the UI to label fields. The model learns from your examples.
+
+## Step 4: Validate Extracted Data
+
+Set up validation rules to catch errors:
+
+- **Field Format**: Ensure dates are in YYYY-MM-DD, amounts are numeric.
+- **Cross-field Validation**: Total = sum of line items + tax.
+- **Vendor Matching**: Compare extracted vendor name against your vendor master list.
+
+Both tools offer validation workflows:
+
+- **Rossum**: Use the Validation Queue to review flagged invoices. Set rules like "Total must match line items sum."
+- **Nanonets**: Use Confidence Scores – if below 90%, send to manual review.
+
+## Step 5: Automate with Zapier
+
+Connect your OCR tool to your accounting system via Zapier.
+
+1. **Trigger**: New invoice extracted and validated (e.g., Rossum: Document Approved; Nanonets: Record Created with status "Validated").
+2. **Action**: Create a bill in QuickBooks, Xero, or NetSuite.
+
+Example Zap:
+
+- Trigger: Rossum – Document Approved
+- Action: QuickBooks – Create Bill (map fields: Vendor, Invoice Number, Date, Amount)
+
+## Step 6: Handle Exceptions
+
+Set up a manual review step for invoices that fail validation:
+
+- Route flagged invoices to a separate folder or email.
+- Use a tool like Trello or Asana to create a task for the AP clerk.
+- After correction, re-submit to the OCR tool for re-extraction.
+
+## Step 7: Monitor and Improve
+
+Review accuracy reports from your OCR tool weekly. Retrain the model with corrected invoices to improve future extraction.
+
+## Conclusion
+
+By implementing this workflow, you eliminate manual data entry, reduce errors, and speed up invoice processing. Start with a small batch of invoices, then scale to full automation.

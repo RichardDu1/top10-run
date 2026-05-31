@@ -1,0 +1,94 @@
+---
+title: "Automated Financial Report Generation with Natural Language Summaries from ERP Data"
+description: "Streamline your month-end close by automatically generating P&L, Balance Sheet, and Cash Flow statements from ERP data, enriched with AI-powered natural language summaries that highlight key variances and trends."
+targetRole: ["financial-controller"]
+targetIntent: ["automate-financial-reporting"]
+difficulty: "Intermediate"
+setupTime: "2-4 hours initial setup, then 30 minutes monthly maintenance"
+costEstimate: "$0 - $200/mo (depending on tool tiers)"
+roi: "Saves 15+ hours per month and reduces reporting errors by 90%"
+toolsUsed: ["drivetrain","pigment","anaplan"]
+---
+
+## Overview
+
+This workflow automates the generation of financial reports (P&L, Balance Sheet, Cash Flow) directly from your ERP system, then adds natural language summaries using AI. It eliminates manual data pulling, spreadsheet errors, and repetitive commentary writing.
+
+## Prerequisites
+
+- Access to your ERP system (e.g., NetSuite, SAP, Microsoft Dynamics) with API or export capabilities
+- Admin rights to connect tools (or work with IT)
+- A modern browser and internet connection
+
+## Step 1: Connect Your ERP to a Financial Planning & Analysis (FP&A) Platform
+
+Choose an AI-native FP&A tool that integrates with your ERP. Based on our research, top options include:
+
+- **Drivetrain**: AI-native platform with direct ERP connectors, automated data ingestion, and natural-language querying.
+- **Pigment**: Enterprise planning platform with AI agents that can pull ERP data and generate narrated insights.
+- **Anaplan**: Robust modeling platform with ERP integration and AI-driven reporting.
+
+**Action**: Sign up for a trial or request a demo. Use their built-in ERP connector (e.g., NetSuite connector) to link your ERP. Map your chart of accounts and dimensions (e.g., cost center, department).
+
+## Step 2: Configure Automated Data Sync
+
+Set up a recurring data sync (daily or hourly) from your ERP to the FP&A platform. This ensures your reports always reflect the latest transactions.
+
+- In Drivetrain: Go to Data Sources > Add Connection > Select your ERP > Authenticate > Choose sync frequency.
+- In Pigment: Use the Integration Hub to connect ERP and set up automated imports.
+- In Anaplan: Use Anaplan Connect or a third-party iPaaS like Workato.
+
+**Tip**: Start with a full historical load (e.g., last 12 months) then switch to incremental syncs.
+
+## Step 3: Build Your Report Templates
+
+Create standardized report layouts for P&L, Balance Sheet, and Cash Flow. Most FP&A tools offer drag-and-drop report builders.
+
+- **P&L**: Include revenue, COGS, gross profit, operating expenses, EBITDA, net income.
+- **Balance Sheet**: Assets, liabilities, equity with current and non-current breakdowns.
+- **Cash Flow**: Operating, investing, financing activities.
+
+**Action**: Use the tool's template library or build from scratch. Apply consistent formatting (e.g., currency, date ranges).
+
+## Step 4: Enable Natural Language Summaries
+
+Leverage AI to generate written commentary for each report. This feature is built into Drivetrain (Conversational Insights) and Pigment (Narrated Insights).
+
+- In Drivetrain: After building a report, click "Generate Summary" – the AI will analyze variances vs. prior period/budget and produce a paragraph explaining key drivers.
+- In Pigment: Use the AI Agent to ask "Summarize this month's P&L vs budget" and it will return a narrative.
+- Alternatively, use a GPT like **ChatGPT** or **Claude** by exporting the report data as CSV and prompting: "Analyze this P&L for [Company Name] for [Month]. Highlight top 3 variances and possible causes."
+
+## Step 5: Schedule Automated Distribution
+
+Set up automatic delivery of the reports and summaries to stakeholders (e.g., CFO, department heads).
+
+- In Drivetrain: Use the "Share" feature to email PDFs or dashboards on a schedule.
+- In Pigment: Create a board with reports and use "Publish" to share via link or email.
+- Use **Zapier** or **Make** to connect your FP&A tool to email, Slack, or Teams.
+
+**Example Zap**: When a new report is generated in Drivetrain, send an email with the PDF and summary text.
+
+## Step 6: Review and Refine
+
+After the first automated run, review the reports and AI summaries for accuracy. Adjust mappings, report layouts, or AI prompts as needed.
+
+- Check that all ERP accounts are correctly mapped.
+- Validate AI summary logic – you can fine-tune by providing examples of good commentary.
+- Set up alerts for anomalies (e.g., unexpected variance > 20%).
+
+## Best Practices
+
+- **Start simple**: Automate one report (e.g., P&L) first, then expand.
+- **Maintain data governance**: Ensure only authorized users can modify report templates.
+- **Use version control**: Keep a backup of your report definitions.
+- **Train your team**: Show them how to use natural language queries to explore data.
+
+## Troubleshooting
+
+- **Data not syncing**: Check ERP API permissions and firewall rules.
+- **Incorrect numbers**: Verify chart of accounts mapping and date filters.
+- **AI summary off**: Provide more context in the prompt or use a custom GPT trained on your financial terminology.
+
+## Conclusion
+
+By following this workflow, you can eliminate manual report generation, reduce errors, and deliver insightful narratives that help leadership make faster decisions. The initial setup pays off within the first month.
